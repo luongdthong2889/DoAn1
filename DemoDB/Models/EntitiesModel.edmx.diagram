@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3c497b85663b4317b487f38de1ca951a" Name="Diagram1">
+        <EntityTypeShape EntityType="WebQuanLyThueXeModel.CHITIETDONDATXE" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebQuanLyThueXeModel.DONDATXE" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebQuanLyThueXeModel.KHACH" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebQuanLyThueXeModel.LOAIXE" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebQuanLyThueXeModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebQuanLyThueXeModel.XE" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="WebQuanLyThueXeModel.FK_CHITIETDONDATXE_DONDATXE" ManuallyRouted="false" />
+        <AssociationConnector Association="WebQuanLyThueXeModel.FK_CHITIETDONDATXE_XE" ManuallyRouted="false" />
+        <AssociationConnector Association="WebQuanLyThueXeModel.FK_DONDATXE_KHACH" ManuallyRouted="false" />
+        <AssociationConnector Association="WebQuanLyThueXeModel.FK_XE_LOAIXE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
