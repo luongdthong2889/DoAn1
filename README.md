@@ -26,7 +26,7 @@
  	</tr>
 	<tr>
   		<td>Người dùng</td>
-   		<td>Form đặt mua, thuê xe ô tô</td>
+   		<td>Form đặt, thuê xe ô tô</td>
 		<td>Mua bán dễ dàng</td>
  	</tr>
 	<tr>
