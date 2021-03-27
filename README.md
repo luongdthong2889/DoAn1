@@ -25,49 +25,24 @@
 		<td>Quản lý dễ dàng</td>
  	</tr>
 	<tr>
-  		<td>Người quản lý và người dùng</td>
-   		<td>Thêm, sửa, xóa tin rao vặt</td>
-		<td>Quản lý tin đã đăng</td>
- 	</tr>
-	<tr>
-  		<td>Người quản lý</td>
-   		<td>Xem, thêm, sửa, xóa một người dùng mới</td>
-		<td>Tiện cho việc quản lý</td>
- 	</tr>
-	<tr>
   		<td>Người dùng</td>
-   		<td>Có một trang thông tin cá nhân (profile)</td>
-		<td>Xem, chỉnh sửa thông tin của chính mình</td>
- 	</tr>
- 	<tr>
-  		<td>Người quản lý</td>
-   		<td>Người dùng truy cập vào web có thể đăng nhập</td>
-		<td>Thực hiện các chức năng phù hợp</td>
- 	</tr>
-        <tr>
-  		<td>Người dùng</td>
-   		<td>Có một trang đăng ký tài khoản</td>
-		<td>Đăng ký</td>
+   		<td>Form đặt mua, thuê xe ô tô</td>
+		<td>Mua bán dễ dàng</td>
  	</tr>
 	<tr>
   		<td>Người dùng</td>
-   		<td>Hiển thị những tin đăng rao vặt mới nhất</td>
-		<td>Được cung cấp thông tin về các tin mới nhất</td>
+   		<td>Hiển thị những sản phẩm mới nhất</td>
+		<td>Được cung cấp thông tin về các sản phẩm mới nhất</td>
  	</tr>
      	<tr>
   		<td>Người dùng</td>
-   		<td>Lọc, tìm kiếm, sắp xếp tin rao vặt</td>
+   		<td>Lọc, tìm kiếm, sắp xếp sản phẩm</td>
 		<td>Tìm kiếm, sắp xếp với bộ lọc theo yêu cầu</td>
  	</tr>
 	<tr>
   		<td>Người dùng</td>
    		<td>Đánh giá các sản phẩm theo sao</td>
 		<td>Đánh giá chất lượng của sản phẩm</td>
- 	</tr>
-	 <tr>
-  		<td>Người dùng</td>
-   		<td>Theo dõi tin rao vặt của bản thân</td>
-		<td>Có thể nhận thông báo từ người mua</td>
  	</tr>
         <tr>
   		<td>Người dùng</td>
@@ -79,5 +54,4 @@
    		<td>Chat qua Messenger</td>
 		<td>Được hỗ trợ, tư vấn trực tuyến </td>
  	</tr>
-
 </table>
