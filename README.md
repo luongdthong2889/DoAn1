@@ -26,6 +26,11 @@
 		<td>Quản lý dễ dàng</td>
  	</tr>
 	<tr>
+  		<td>Người quản lý và người dùng</td>
+   		<td>Thêm, sửa, xóa sản phẩm</td>
+		<td>Quản lý sản phẩm dễ dàng</td>
+ 	</tr>
+	<tr>
   		<td>Người dùng</td>
    		<td>Form đặt, thuê xe ô tô</td>
 		<td>Mua bán dễ dàng</td>
