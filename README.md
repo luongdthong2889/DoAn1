@@ -3,11 +3,12 @@
 * Dương Quốc Huy 18DH110826
 * Lương Đình Thông: 18DH110831
 * Lâm Trường Phát 18DH110839
-* Nguyễn Hoàng Anh Vũ
+* Nguyễn Hoàng Anh Vũ 18DH110819
 * Trần Lynh Thiên Ân
 ## Mô tả đề tài :
 <ul>
     <li>Tạo ra một trang web đáp ứng nhu cầu cho khách hàng giúp tiết kiệm thời gian mua bán, tiền bạc</li>
+    <li>Giúp tiếp cận dễ dàng tìm kiếm nhóm khách hàng tiềm năng với tính năng chuyên nghiệp mà không tốn chi phí marketing nào</li>
     <li>Giúp kiếm tiền thụ động một cách hiệu quả và nhanh chóng</li>
     <li>Giúp doanh nghiệp triển khai các hoạt động kinh doanh, truyền thông hiệu quả</li>
 </ul>
