@@ -1,0 +1,51 @@
+﻿@model DemoDB2.Models.LoaiXe
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LoaiXe</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenLoaiXe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLoaiXe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoCho)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoCho)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongXe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongXe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HangSanXuat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HangSanXuat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaLoaiXe }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
