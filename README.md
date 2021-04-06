@@ -4,7 +4,7 @@
 * Lương Đình Thông: 18DH110831
 * Lâm Trường Phát 18DH110839
 * Nguyễn Hoàng Anh Vũ 18DH110819
-* Trần Lynh Thiên Ân
+* Trần Lynh Thiên Ân 18DH110928
 ## Mô tả đề tài :
 <ul>
     <li>Tạo ra một trang web đáp ứng nhu cầu cho khách hàng giúp người tiêu dùng có cái nhìn tổng quát về giá bán trên thị trường, lựa chọn được sản phẩm vừa túi tiền</li>
