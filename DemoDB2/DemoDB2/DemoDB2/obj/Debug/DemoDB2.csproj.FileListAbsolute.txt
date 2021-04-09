@@ -182,8 +182,8 @@ D:\DemoDB2\DemoDB2\bin\Microsoft.AI.DependencyCollector.xml
 D:\DemoDB2\DemoDB2\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\DemoDB2\DemoDB2\bin\Microsoft.AI.WindowsServer.xml
 D:\DemoDB2\DemoDB2\bin\Microsoft.AI.Web.xml
-D:\DemoDB2\DemoDB2\obj\Debug\DemoDB2.csprojAssemblyReference.cache
 D:\DemoDB2\DemoDB2\obj\Debug\DemoDB2.csproj.CoreCompileInputs.cache
 D:\DemoDB2\DemoDB2\obj\Debug\DemoDB2.csproj.CopyComplete
 D:\DemoDB2\DemoDB2\obj\Debug\DemoDB2.dll
 D:\DemoDB2\DemoDB2\obj\Debug\DemoDB2.pdb
+D:\DemoDB2\DemoDB2\obj\Debug\DemoDB2.csprojAssemblyReference.cache

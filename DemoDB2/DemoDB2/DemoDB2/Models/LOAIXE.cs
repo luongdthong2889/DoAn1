@@ -26,7 +26,7 @@ namespace DemoDB2.Models
         public Nullable<int> SOCHO { get; set; }
         public Nullable<int> SOLUONGXE { get; set; }
         public string HANGSANXUAT { get; set; }
-        public byte[] HINHANH { get; set; }
+        public string HINHANH { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETHOPDONG> CHITIETHOPDONGs { get; set; }

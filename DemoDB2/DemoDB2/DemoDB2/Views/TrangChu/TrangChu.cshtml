@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<DemoDB2.Models.LOAIXE>
 @{
     ViewBag.Title = "TrangChu";
     Layout = "~/Views/Shared/_Layout00.cshtml";
@@ -13,40 +13,66 @@
 <div class="small-container">
     <h2 class="title">Các dòng xe </h2>
     <div class="row">
-        <div class="col-4">
-            <a href="Xe-Mercedes.html"><img src="/Pictures/mec.jpg"></a>
-            <h4>Xe Mercedes C-200</h4>
-
-        </div>
-        <div class="col-4">
-            <img src="/Pictures/bmw 2.jpg">
-            <h4>BMW 2021 Super Sport</h4>
-
-        </div>
-        <div class="col-4">
-            <img src="/Pictures/bmw.jpg">
-            <h4>BMW 2020 Super Sport</h4>
-
-        </div>
-        <div class="col-4">
-            <img src="/Pictures/forture.jpg">
-            <h4>Toyota Forture Quốc Dân</h4>
-
-        </div>
-
-        <div class="col-4">
-            <img src="/Pictures/kia.jpg">
-            <h4>Kia Mornata 2021</h4>
-
-        </div>
-
-        <div class="col-4">
-            <img src="/Pictures/xe dien.jpg">
-            <h4>Alpha Electric Off-Road Car</h4>
-
-        </div>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <div class="col-md-4">
+                        <div class="productbox">
+                            <div class="fadeshop">
+                                <div class="captionshop text-center" style="display: none;">
+                                    <h3>@Html.DisplayFor(modelitem => item.HANGSANXUAT)</h3>
+                                    <p>
+                                        This is a short excerpt to generally describe what the item is about.
+                                    </p>
+                                    <p>
+                                        <a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i>Xem Chi Tiết</a>
+                                    </p>
+                                </div>
+                                <span class="maxproduct"><img src="@Url.Content(item.HINHANH)" alt=""></span>
+                            </div>
+                            <div class="product-details">
+                                <a href="#">
+                                    <h1>FastSell Theme</h1>
+                                </a>
+                                <span class="price">
+                                    <span class="edd_price">$49.00</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
     </div>
 </div>
+
+<!--Button Brower-->
+<div class="item content">
+    <div class="container text-center">
+        <a href="@Url.Action("Index","DanhMucXe")" class="homebrowseitems">
+            Xem Danh Mục Xe
+            <div class="homebrowseitemsicon">
+                <i class="fa fa-star fa-spin"></i>
+            </div>
+        </a>
+    </div>
+</div>
+<br />
+
+<!--Banner-->
+<section class="promotion">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 wow slideInLeft" data-wow-delay=".2s">
+                <a class="box-promotion" href="#"><img alt="" class="img-fluid" src="~/Content/images/Banner_lon_1.jpg" /></a>
+            </div>
+            <div class="col-md-6 wow slideInRight" data-wow-delay=".2s">
+                <a class="box-promotion" href="#"><img alt="" class="img-fluid" src="~/Content/images/Banner_lon_2.jpg" /></a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!----- testimonial ---->
 <div class="testimonial">

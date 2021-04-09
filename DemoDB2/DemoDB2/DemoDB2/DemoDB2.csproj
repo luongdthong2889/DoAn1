@@ -150,72 +150,86 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DanhMucXeController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\KhachHangsController.cs" />
-    <Compile Include="Controllers\LOAIXEsController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
-    <Compile Include="Controllers\XeProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CHITIETDONDAT.cs">
-      <DependentUpon>ThueXeDBModel.tt</DependentUpon>
+      <DependentUpon>DBThueXeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CHITIETHOPDONG.cs">
-      <DependentUpon>ThueXeDBModel.tt</DependentUpon>
+      <DependentUpon>DBThueXeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CHITIETTHANHLYHOPDONG.cs">
-      <DependentUpon>ThueXeDBModel.tt</DependentUpon>
+      <DependentUpon>DBThueXeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBThueXeModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBThueXeModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBThueXeModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBThueXeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBThueXeModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBThueXeModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\DONDATXE.cs">
-      <DependentUpon>ThueXeDBModel.tt</DependentUpon>
+      <DependentUpon>DBThueXeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Hang.cs" />
     <Compile Include="Models\HOPDONG.cs">
-      <DependentUpon>ThueXeDBModel.tt</DependentUpon>
+      <DependentUpon>DBThueXeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KHACHHANG.cs">
-      <DependentUpon>ThueXeDBModel.tt</DependentUpon>
+      <DependentUpon>DBThueXeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LOAIXE.cs">
-      <DependentUpon>ThueXeDBModel.tt</DependentUpon>
+      <DependentUpon>DBThueXeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>ThueXeDBModel.tt</DependentUpon>
+      <DependentUpon>DBThueXeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\THANHLYHOPDONG.cs">
-      <DependentUpon>ThueXeDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ThueXeDBModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThueXeDBModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ThueXeDBModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThueXeDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ThueXeDBModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThueXeDBModel.edmx</DependentUpon>
+      <DependentUpon>DBThueXeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\XE.cs">
-      <DependentUpon>ThueXeDBModel.tt</DependentUpon>
+      <DependentUpon>DBThueXeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\animate.css" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\b.jpg" />
+    <Content Include="Content\images\Banner_lon_1.jpg" />
+    <Content Include="Content\images\Banner_lon_2.jpg" />
+    <Content Include="Content\images\cash.png" />
+    <Content Include="Content\images\clock.png" />
     <Content Include="Content\images\homeimg.jpg" />
+    <Content Include="Content\images\internet-banking.png" />
+    <Content Include="Content\images\locate.png" />
+    <Content Include="Content\images\mail.png" />
+    <Content Include="Content\images\map.png" />
+    <Content Include="Content\images\master-card.png" />
     <Content Include="Content\images\menu.png" />
+    <Content Include="Content\images\method-visa.png" />
+    <Content Include="Content\images\pay-3.png" />
+    <Content Include="Content\images\phone.png" />
     <Content Include="Content\images\product1-1.jpg" />
     <Content Include="Content\images\product1.jpg" />
     <Content Include="Content\images\product2-2.jpg" />
@@ -229,20 +243,21 @@
     <Content Include="Content\js\jquery-.js" />
     <Content Include="Content\js\npm.js" />
     <Content Include="Content\js\validate.js" />
+    <Content Include="Content\js\wow.min.js" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\ThueXeDBModel.Context.tt">
+    <Content Include="Models\DBThueXeModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ThueXeDBModel.edmx</DependentUpon>
-      <LastGenOutput>ThueXeDBModel.Context.cs</LastGenOutput>
+      <DependentUpon>DBThueXeModel.edmx</DependentUpon>
+      <LastGenOutput>DBThueXeModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ThueXeDBModel.tt">
+    <Content Include="Models\DBThueXeModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ThueXeDBModel.edmx</DependentUpon>
-      <LastGenOutput>ThueXeDBModel.cs</LastGenOutput>
+      <DependentUpon>DBThueXeModel.edmx</DependentUpon>
+      <LastGenOutput>DBThueXeModel.cs</LastGenOutput>
     </Content>
     <Content Include="Pictures\bmw 2.jpg" />
     <Content Include="Pictures\bmw.jpg" />
@@ -258,7 +273,6 @@
     <Content Include="Pictures\main-logo.jpg" />
     <Content Include="Pictures\mec.jpg" />
     <Content Include="Pictures\xe dien.jpg" />
-    <Content Include="Scripts\anhxe.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -272,12 +286,12 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
-    <EntityDeploy Include="Models\ThueXeDBModel.edmx">
+    <EntityDeploy Include="Models\DBThueXeModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ThueXeDBModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>DBThueXeModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ThueXeDBModel.edmx.diagram">
-      <DependentUpon>ThueXeDBModel.edmx</DependentUpon>
+    <Content Include="Models\DBThueXeModel.edmx.diagram">
+      <DependentUpon>DBThueXeModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -305,13 +319,10 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\TrangChu\TrangChu.cshtml" />
-    <Content Include="Views\TrangChu\test.cshtml" />
     <Content Include="Views\Shared\_Layout00.cshtml" />
-    <Content Include="Views\LOAIXEs\Create.cshtml" />
-    <Content Include="Views\LOAIXEs\Delete.cshtml" />
-    <Content Include="Views\LOAIXEs\Details.cshtml" />
-    <Content Include="Views\LOAIXEs\Edit.cshtml" />
-    <Content Include="Views\LOAIXEs\Index.cshtml" />
+    <Content Include="Views\DanhMucXe\Index.cshtml" />
+    <Content Include="Views\GioHang\Index.cshtml" />
+    <Content Include="Views\DanhMucXe\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
