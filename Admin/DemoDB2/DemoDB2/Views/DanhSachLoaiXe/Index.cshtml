@@ -1,0 +1,71 @@
+﻿@model IEnumerable<DemoDB2.Models.LOAIXE>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Danh sách loại xe</h1>
+    <p class="mb-4">
+        @Html.ActionLink("Tạo loại xe mới", "Create")
+    </p>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Danh sách loại xe</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Tên Loại Xe</th>
+                                <th>Số Chỗ</th>
+                                <th>Số Lượng Xe</th>
+                                <th>Hãng Sản Xuất</th>
+                                <th>Hình Ảnh</th>
+                                <th>Chức Năng</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+
+                        </tfoot>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TENLOAIXE)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SOCHO)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SOLUONGXE)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HANGSANXUAT)
+                                    </td>
+                                    <td>
+                                        <img src="@Url.Content(item.HINHANH)" alt="">
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { mlx = item.MALOAIXE }) |
+                                        @Html.ActionLink("Details", "Details", new { mlx = item.MALOAIXE }) |
+                                        @Html.ActionLink("Delete", "Delete", new { mlx = item.MALOAIXE })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
