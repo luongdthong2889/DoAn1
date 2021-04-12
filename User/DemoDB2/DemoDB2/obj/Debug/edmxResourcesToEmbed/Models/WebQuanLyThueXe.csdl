@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebQuanLyThueXeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CHITIETDONDATXE">
+    <Key>
+      <PropertyRef Name="MaCTDonDatXe" />
+    </Key>
+    <Property Name="MaCTDonDatXe" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="MaDatXe" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="MaXe" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="MoTaCT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DONDATXE" Relationship="Self.FK_CHITIETDONDATXE_DONDATXE" FromRole="CHITIETDONDATXE" ToRole="DONDATXE" />
+    <NavigationProperty Name="XE" Relationship="Self.FK_CHITIETDONDATXE_XE" FromRole="CHITIETDONDATXE" ToRole="XE" />
+  </EntityType>
+  <EntityType Name="DONDATXE">
+    <Key>
+      <PropertyRef Name="MaDatXe" />
+    </Key>
+    <Property Name="MaDatXe" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="NgayDatXe" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TienCoc" Type="Int32" />
+    <Property Name="TienTra" Type="Int32" Nullable="false" />
+    <Property Name="MaKhach" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="CHITIETDONDATXEs" Relationship="Self.FK_CHITIETDONDATXE_DONDATXE" FromRole="DONDATXE" ToRole="CHITIETDONDATXE" />
+    <NavigationProperty Name="KHACH" Relationship="Self.FK_DONDATXE_KHACH" FromRole="DONDATXE" ToRole="KHACH" />
+  </EntityType>
+  <EntityType Name="KHACH">
+    <Key>
+      <PropertyRef Name="MaKhach" />
+    </Key>
+    <Property Name="MaKhach" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TenKhach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GioiTinh" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CMND" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="SDT" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="TenCoQuan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DONDATXEs" Relationship="Self.FK_DONDATXE_KHACH" FromRole="KHACH" ToRole="DONDATXE" />
+  </EntityType>
+  <EntityType Name="LOAIXE">
+    <Key>
+      <PropertyRef Name="MaLoaiXe" />
+    </Key>
+    <Property Name="MaLoaiXe" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TenLoaiXe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoCho" Type="Int32" Nullable="false" />
+    <Property Name="SoLuongXe" Type="Int32" Nullable="false" />
+    <Property Name="HangSanXuat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="XEs" Relationship="Self.FK_XE_LOAIXE" FromRole="LOAIXE" ToRole="XE" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="XE">
+    <Key>
+      <PropertyRef Name="MaXe" />
+    </Key>
+    <Property Name="MaXe" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="MaLoaiXe" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TenXe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BienSo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="DonGia" Type="Int32" Nullable="false" />
+    <Property Name="TienCoc" Type="Int32" />
+    <Property Name="NgayDatXe" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MoTa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TinhTrang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CHITIETDONDATXEs" Relationship="Self.FK_CHITIETDONDATXE_XE" FromRole="XE" ToRole="CHITIETDONDATXE" />
+    <NavigationProperty Name="LOAIXE" Relationship="Self.FK_XE_LOAIXE" FromRole="XE" ToRole="LOAIXE" />
+  </EntityType>
+  <Association Name="FK_CHITIETDONDATXE_DONDATXE">
+    <End Role="DONDATXE" Type="Self.DONDATXE" Multiplicity="1" />
+    <End Role="CHITIETDONDATXE" Type="Self.CHITIETDONDATXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONDATXE">
+        <PropertyRef Name="MaDatXe" />
+      </Principal>
+      <Dependent Role="CHITIETDONDATXE">
+        <PropertyRef Name="MaDatXe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHITIETDONDATXE_XE">
+    <End Role="XE" Type="Self.XE" Multiplicity="1" />
+    <End Role="CHITIETDONDATXE" Type="Self.CHITIETDONDATXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XE">
+        <PropertyRef Name="MaXe" />
+      </Principal>
+      <Dependent Role="CHITIETDONDATXE">
+        <PropertyRef Name="MaXe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DONDATXE_KHACH">
+    <End Role="KHACH" Type="Self.KHACH" Multiplicity="0..1" />
+    <End Role="DONDATXE" Type="Self.DONDATXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACH">
+        <PropertyRef Name="MaKhach" />
+      </Principal>
+      <Dependent Role="DONDATXE">
+        <PropertyRef Name="MaKhach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XE_LOAIXE">
+    <End Role="LOAIXE" Type="Self.LOAIXE" Multiplicity="1" />
+    <End Role="XE" Type="Self.XE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIXE">
+        <PropertyRef Name="MaLoaiXe" />
+      </Principal>
+      <Dependent Role="XE">
+        <PropertyRef Name="MaLoaiXe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebQuanLyThueXeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CHITIETDONDATXEs" EntityType="Self.CHITIETDONDATXE" />
+    <EntitySet Name="DONDATXEs" EntityType="Self.DONDATXE" />
+    <EntitySet Name="KHACHes" EntityType="Self.KHACH" />
+    <EntitySet Name="LOAIXEs" EntityType="Self.LOAIXE" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="XEs" EntityType="Self.XE" />
+    <AssociationSet Name="FK_CHITIETDONDATXE_DONDATXE" Association="Self.FK_CHITIETDONDATXE_DONDATXE">
+      <End Role="DONDATXE" EntitySet="DONDATXEs" />
+      <End Role="CHITIETDONDATXE" EntitySet="CHITIETDONDATXEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHITIETDONDATXE_XE" Association="Self.FK_CHITIETDONDATXE_XE">
+      <End Role="XE" EntitySet="XEs" />
+      <End Role="CHITIETDONDATXE" EntitySet="CHITIETDONDATXEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONDATXE_KHACH" Association="Self.FK_DONDATXE_KHACH">
+      <End Role="KHACH" EntitySet="KHACHes" />
+      <End Role="DONDATXE" EntitySet="DONDATXEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XE_LOAIXE" Association="Self.FK_XE_LOAIXE">
+      <End Role="LOAIXE" EntitySet="LOAIXEs" />
+      <End Role="XE" EntitySet="XEs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
