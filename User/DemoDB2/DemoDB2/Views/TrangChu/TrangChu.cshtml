@@ -1,0 +1,119 @@
+﻿@model IEnumerable<DemoDB2.Models.LOAIXE>
+@{
+    ViewBag.Title = "TrangChu";
+    Layout = "~/Views/Shared/_Layout00.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<!-------featured products ------->
+<div class="small-container">
+    <h2 class="title">Các dòng xe </h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <div class="col-md-4">
+                        <div class="productbox">
+                            <div class="fadeshop">
+                                <div class="captionshop text-center" style="display: none;">
+                                    <h3>@Html.DisplayFor(modelitem => item.HANGSANXUAT)</h3>
+                                    <p>
+                                        This is a short excerpt to generally describe what the item is about.
+                                    </p>
+                                    <p>
+                                        <a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i>Xem Chi Tiết</a>
+                                    </p>
+                                </div>
+                                <span class="maxproduct"><img src="@Url.Content(item.HINHANH)" alt=""></span>
+                            </div>
+                            <div class="product-details">
+                                <a href="#">
+                                    <h1>FastSell Theme</h1>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </div>
+</div>
+
+<!--Button Brower-->
+<div class="item content">
+    <div class="container text-center">
+        <a href="@Url.Action("Index","DanhMucXe")" class="homebrowseitems">
+            Xem Danh Mục Xe
+            <div class="homebrowseitemsicon">
+                <i class="fa fa-star fa-spin"></i>
+            </div>
+        </a>
+    </div>
+</div>
+<br />
+
+<!--Banner-->
+<section class="promotion">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 wow slideInLeft" data-wow-delay=".2s">
+                <a class="box-promotion" href="#"><img alt="" class="img-fluid" src="~/Content/images/Banner_lon_1.jpg" /></a>
+            </div>
+            <div class="col-md-6 wow slideInRight" data-wow-delay=".2s">
+                <a class="box-promotion" href="#"><img alt="" class="img-fluid" src="~/Content/images/Banner_lon_2.jpg" /></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!----- testimonial ---->
+<div class="testimonial">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-3">
+                <p>Xe đẹp mà sang, chủ xe nhiệt tình </p>
+
+                <h3>John Smith</h3>
+            </div>
+            <div class="col-3">
+                <p>Mình book chuyến Nha Trang bằng xe điện nên không tốn xăng ! Quá đã</p>
+
+                <h3>Mr.Electric</h3>
+            </div>
+            <div class="col-3">
+                <p>Xe êm</p>
+
+                <h3>Mr. Wonderful</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!------------Brands---------->
+<div class="brands">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-5">
+                <img src="/Pictures/logo/bmw-logo.png" alt="Gorej">
+            </div>
+            <div class="col-5">
+                <img src="/Pictures/logo/mec-logo.jpg" alt="Cola">
+            </div>
+            <div class="col-5">
+                <img src="/Pictures/logo/lambor-logo.png" alt="Oppo">
+            </div>
+            <div class="col-5">
+                <img src="/Pictures/logo/logo-toyota.jpg" alt="Paypal">
+            </div>
+            <div class="col-5">
+                <img src="/Pictures/logo/kia-logo.png" alt="Philis">
+            </div>
+        </div>
+    </div>
+</div>
+
