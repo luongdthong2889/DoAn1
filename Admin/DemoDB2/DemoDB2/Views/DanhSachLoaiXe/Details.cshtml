@@ -4,55 +4,81 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <h2>Chi Tiết Loại Xe</h2>
 
-<h2>Details</h2>
+        <div>
+            <h4>Danh Sách Loại Xe</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.TENLOAIXE)
+                </dt>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TENLOAIXE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SOCHO)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SOLUONGXE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HANGSANXUAT)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HINHANH)
-        </th>
-        <th></th>
-    </tr>
+                <dd>
+                    @Html.DisplayFor(model => model.TENLOAIXE)
+                </dd>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TENLOAIXE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SOCHO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SOLUONGXE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HANGSANXUAT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HINHANH)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MALOAIXE }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MALOAIXE }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MALOAIXE })
-        </td>
-    </tr>
-}
+                <dt>
+                    @Html.DisplayNameFor(model => model.SOCHO)
+                </dt>
 
-</table>
+                <dd>
+                    @Html.DisplayFor(model => model.SOCHO)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SOLUONGXE)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SOLUONGXE)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.HANGSANXUAT)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HANGSANXUAT)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.HINHANH)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HINHANH)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.MALOAIXE }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+        @section Scripts {
+            <!-- Bootstrap core JavaScript-->
+            <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+            <script src="~/Content/vendor/bootstrap/~/Scripts/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Core plugin JavaScript-->
+            <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+            <!-- Custom scripts for all pages-->
+            <script src="~/Scripts/js/sb-admin-2.min.js"></script>
+
+            <!-- Page level plugins -->
+            <script src="~/Content/vendor/datatables/jquery.dataTables.min.js"></script>
+            <script src="~/Content/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+            <!-- Page level custom scripts -->
+            <script src="~/Scripts/js/demo/datatables-demo.js"></script>
+        }
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->

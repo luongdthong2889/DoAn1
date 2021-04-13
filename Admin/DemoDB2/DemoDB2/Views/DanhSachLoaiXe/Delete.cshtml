@@ -4,62 +4,88 @@
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <h2>Xóa Loại Xe</h2>
 
-<h2>Delete</h2>
+        <h3>Bạn có chắc chắn muốn xóa không?</h3>
+        <div>
+            <h4>Danh Sách Loại Xe</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.TENLOAIXE)
+                </dt>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>LOAIXE</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TENLOAIXE)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.TENLOAIXE)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.TENLOAIXE)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.SOCHO)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SOCHO)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.SOCHO)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.SOCHO)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.SOLUONGXE)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SOLUONGXE)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.SOLUONGXE)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.SOLUONGXE)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.HANGSANXUAT)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HANGSANXUAT)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.HANGSANXUAT)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.HANGSANXUAT)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.HINHANH)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HINHANH)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.HINHANH)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.HINHANH)
-        </dd>
+            </dl>
 
-    </dl>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-primary" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+            @section Scripts {
+                <!-- Bootstrap core JavaScript-->
+                <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+                <script src="~/Content/vendor/bootstrap/~/Scripts/js/bootstrap.bundle.min.js"></script>
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                <!-- Core plugin JavaScript-->
+                <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+                <!-- Custom scripts for all pages-->
+                <script src="~/Scripts/js/sb-admin-2.min.js"></script>
+
+                <!-- Page level plugins -->
+                <script src="~/Content/vendor/datatables/jquery.dataTables.min.js"></script>
+                <script src="~/Content/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+                <!-- Page level custom scripts -->
+                <script src="~/Scripts/js/demo/datatables-demo.js"></script>
+            }
         </div>
-    }
+    </div>
+    <!-- /.container-fluid -->
 </div>
+<!-- End of Main Content -->
