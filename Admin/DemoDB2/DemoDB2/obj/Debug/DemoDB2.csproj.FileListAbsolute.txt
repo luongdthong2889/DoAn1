@@ -57,7 +57,6 @@ D:\HUFLIT HK 2 NAM 3\Do An 1\Admin\DemoDB2\DemoDB2\bin\System.Web.WebPages.xml
 D:\HUFLIT HK 2 NAM 3\Do An 1\Admin\DemoDB2\DemoDB2\bin\System.Web.WebPages.Deployment.xml
 D:\HUFLIT HK 2 NAM 3\Do An 1\Admin\DemoDB2\DemoDB2\bin\System.Web.WebPages.Razor.xml
 D:\HUFLIT HK 2 NAM 3\Do An 1\Admin\DemoDB2\DemoDB2\bin\Antlr3.Runtime.pdb
-D:\HUFLIT HK 2 NAM 3\Do An 1\Admin\DemoDB2\DemoDB2\obj\Debug\DemoDB2.csprojAssemblyReference.cache
 D:\HUFLIT HK 2 NAM 3\Do An 1\Admin\DemoDB2\DemoDB2\obj\Debug\DemoDB2.csproj.CoreCompileInputs.cache
 D:\HUFLIT HK 2 NAM 3\Do An 1\Admin\DemoDB2\DemoDB2\obj\Debug\DemoDB2.csproj.CopyComplete
 D:\HUFLIT HK 2 NAM 3\Do An 1\Admin\DemoDB2\DemoDB2\obj\Debug\DemoDB2.dll

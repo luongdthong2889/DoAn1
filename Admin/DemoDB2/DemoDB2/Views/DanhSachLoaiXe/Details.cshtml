@@ -8,76 +8,80 @@
 <div class="container-fluid">
     <!-- Begin Page Content -->
     <div class="container-fluid">
-        <h2>Chi Tiết Loại Xe</h2>
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Danh sách loại xe</h6>
+            </div>
+            <div class="card-body">
+                <h4>Danh sách loại xe</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TENLOAIXE)
+                    </dt>
 
-        <div>
-            <h4>Danh Sách Loại Xe</h4>
-            <hr />
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.TENLOAIXE)
-                </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.TENLOAIXE)
+                    </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.TENLOAIXE)
-                </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.SOCHO)
+                    </dt>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.SOCHO)
-                </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.SOCHO)
+                    </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.SOCHO)
-                </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.SOLUONGXE)
+                    </dt>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.SOLUONGXE)
-                </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.SOLUONGXE)
+                    </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.SOLUONGXE)
-                </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.HANGSANXUAT)
+                    </dt>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.HANGSANXUAT)
-                </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.HANGSANXUAT)
+                    </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.HANGSANXUAT)
-                </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.HINHANH)
+                    </dt>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.HINHANH)
-                </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.HINHANH)
+                    </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.HINHANH)
-                </dd>
+                </dl>
+                <p>
+                    @Html.ActionLink("Sửa", "Edit", new { id = Model.MALOAIXE }) |
+                    @Html.ActionLink("Về Danh sách", "Index")
+                </p>
+                @section Scripts {
+                    <!-- Bootstrap core JavaScript-->
+                    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+                    <script src="~/Content/vendor/bootstrap/~/Scripts/js/bootstrap.bundle.min.js"></script>
 
-            </dl>
+                    <!-- Core plugin JavaScript-->
+                    <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+                    <!-- Custom scripts for all pages-->
+                    <script src="~/Scripts/js/sb-admin-2.min.js"></script>
+
+                    <!-- Page level plugins -->
+                    <script src="~/Content/vendor/datatables/jquery.dataTables.min.js"></script>
+                    <script src="~/Content/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+                    <!-- Page level custom scripts -->
+                    <script src="~/Scripts/js/demo/datatables-demo.js"></script>
+                }
+            </div>
         </div>
-        <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.MALOAIXE }) |
-            @Html.ActionLink("Back to List", "Index")
-        </p>
-        @section Scripts {
-            <!-- Bootstrap core JavaScript-->
-            <script src="~/Content/vendor/jquery/jquery.min.js"></script>
-            <script src="~/Content/vendor/bootstrap/~/Scripts/js/bootstrap.bundle.min.js"></script>
-
-            <!-- Core plugin JavaScript-->
-            <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-            <!-- Custom scripts for all pages-->
-            <script src="~/Scripts/js/sb-admin-2.min.js"></script>
-
-            <!-- Page level plugins -->
-            <script src="~/Content/vendor/datatables/jquery.dataTables.min.js"></script>
-            <script src="~/Content/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-            <!-- Page level custom scripts -->
-            <script src="~/Scripts/js/demo/datatables-demo.js"></script>
-        }
     </div>
     <!-- /.container-fluid -->
 </div>
