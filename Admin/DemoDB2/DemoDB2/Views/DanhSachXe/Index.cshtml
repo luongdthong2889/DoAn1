@@ -1,0 +1,111 @@
+﻿@model IEnumerable<DemoDB2.Models.XE>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Danh sách xe</h1>
+    <p class="mb-4">
+        @Html.ActionLink("Tạo xe mới", "Create")
+    </p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Danh sách xe</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Tên Xe</th>
+                            <th>Biển Số</th>
+                            <th>Giá</th>
+                            <th>Số Ngày Đặt</th>
+                            <th>Tiền Cọc</th>
+                            <th>Tình Trạng</th>
+                            <th>Mô Tả</th>
+                            <th>Tên Loại Xe</th>
+                            <th>Chức Năng</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Tên Xe</th>
+                            <th>Biển Số</th>
+                            <th>Giá</th>
+                            <th>Số Ngày Đặt</th>
+                            <th>Tiền Cọc</th>
+                            <th>Tình Trạng</th>
+                            <th>Mô Tả</th>
+                            <th>Tên Loại Xe</th>
+                            <th>Chức Năng</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TENXE)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BIENSO)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DONGIA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SONGAYDAT)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TIENCOC)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TINHTRANG)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MOTA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LOAIXE.TENLOAIXE)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Sửa", "Edit", new { id = item.MAXE }) |
+                                @Html.ActionLink("Chi tiết", "Details", new { id = item.MAXE }) |
+                                @Html.ActionLink("Xóa", "Delete", new { id = item.MAXE })
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+@section Scripts{
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/~/Scripts/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/Scripts/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="~/Content/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Content/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/Scripts/js/demo/datatables-demo.js"></script>
+}

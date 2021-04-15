@@ -61,3 +61,4 @@ D:\HUFLIT HK 2 NAM 3\Do An 1\Admin\DemoDB2\DemoDB2\obj\Debug\DemoDB2.csproj.Core
 D:\HUFLIT HK 2 NAM 3\Do An 1\Admin\DemoDB2\DemoDB2\obj\Debug\DemoDB2.csproj.CopyComplete
 D:\HUFLIT HK 2 NAM 3\Do An 1\Admin\DemoDB2\DemoDB2\obj\Debug\DemoDB2.dll
 D:\HUFLIT HK 2 NAM 3\Do An 1\Admin\DemoDB2\DemoDB2\obj\Debug\DemoDB2.pdb
+D:\HUFLIT HK 2 NAM 3\Do An 1\Admin\DemoDB2\DemoDB2\obj\Debug\DemoDB2.csprojAssemblyReference.cache

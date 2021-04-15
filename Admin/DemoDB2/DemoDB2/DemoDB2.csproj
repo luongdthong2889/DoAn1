@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DanhSachLoaiXeController.cs" />
+    <Compile Include="Controllers\DanhSachXeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -188,6 +189,28 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\sb-admin-2.css" />
     <Content Include="Content\css\sb-admin-2.min.css" />
+    <Content Include="Content\images\b.jpg" />
+    <Content Include="Content\images\Banner_lon_1.jpg" />
+    <Content Include="Content\images\Banner_lon_2.jpg" />
+    <Content Include="Content\images\cash.png" />
+    <Content Include="Content\images\clock.png" />
+    <Content Include="Content\images\homeimg.jpg" />
+    <Content Include="Content\images\internet-banking.png" />
+    <Content Include="Content\images\locate.png" />
+    <Content Include="Content\images\mail.png" />
+    <Content Include="Content\images\map.png" />
+    <Content Include="Content\images\master-card.png" />
+    <Content Include="Content\images\menu.png" />
+    <Content Include="Content\images\method-visa.png" />
+    <Content Include="Content\images\pay-3.png" />
+    <Content Include="Content\images\phone.png" />
+    <Content Include="Content\images\product1-1.jpg" />
+    <Content Include="Content\images\product1.jpg" />
+    <Content Include="Content\images\product2-2.jpg" />
+    <Content Include="Content\images\product2-3.jpg" />
+    <Content Include="Content\images\product2.jpg" />
+    <Content Include="Content\images\product3.png" />
+    <Content Include="Content\images\scorilo2-70x70.jpg" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.js" />
@@ -2166,6 +2189,11 @@
     <Content Include="Views\DanhSachLoaiXe\Details.cshtml" />
     <Content Include="Views\DanhSachLoaiXe\Edit.cshtml" />
     <Content Include="Views\DanhSachLoaiXe\Delete.cshtml" />
+    <Content Include="Views\DanhSachXe\Index.cshtml" />
+    <Content Include="Views\DanhSachXe\Edit.cshtml" />
+    <Content Include="Views\DanhSachXe\Create.cshtml" />
+    <Content Include="Views\DanhSachXe\Details.cshtml" />
+    <Content Include="Views\DanhSachXe\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
