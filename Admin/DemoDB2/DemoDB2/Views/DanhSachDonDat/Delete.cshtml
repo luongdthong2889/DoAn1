@@ -1,4 +1,4 @@
-﻿@model DemoDB2.Models.XE
+﻿@model DemoDB2.Models.DONDATXE
 
 @{
     ViewBag.Title = "Delete";
@@ -11,61 +11,37 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Xóa xe</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Xóa đơn đặt</h6>
             </div>
             <div class="card-body">
 
                 <h3>Bạn có chắc chắn muốn xóa không?</h3>
                 <div>
-                    <h4>Thông tin xe</h4>
+                    <h4>Thông tin đơn đặt</h4>
                     <hr />
                     <dl class="dl-horizontal">
                         <dt>
-                            @Html.DisplayNameFor(model => model.MAXE)
+                            @Html.DisplayNameFor(model => model.MADATXE)
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.MAXE)
+                            @Html.DisplayFor(model => model.MADATXE)
                         </dd>
 
                         <dt>
-                            @Html.DisplayNameFor(model => model.MALOAIXE)
+                            @Html.DisplayNameFor(model => model.MAKHACH)
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.MALOAIXE)
+                            @Html.DisplayFor(model => model.MAKHACH)
                         </dd>
 
                         <dt>
-                            @Html.DisplayNameFor(model => model.TENXE)
+                            @Html.DisplayNameFor(model => model.NGAYDAT)
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.TENXE)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.BIENSO)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.BIENSO)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.DONGIA)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.DONGIA)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.SONGAYDAT)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.SONGAYDAT)
+                            @Html.DisplayFor(model => model.NGAYDAT)
                         </dd>
 
                         <dt>
@@ -77,19 +53,11 @@
                         </dd>
 
                         <dt>
-                            @Html.DisplayNameFor(model => model.TINHTRANG)
+                            @Html.DisplayNameFor(model => model.TIENTRA)
                         </dt>
 
                         <dd>
-                            @Html.DisplayFor(model => model.TINHTRANG)
-                        </dd>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.MOTA)
-                        </dt>
-
-                        <dd>
-                            @Html.DisplayFor(model => model.MOTA)
+                            @Html.DisplayFor(model => model.TIENTRA)
                         </dd>
 
                     </dl>

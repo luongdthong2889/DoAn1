@@ -23,6 +23,23 @@
     <!-- Custom styles for this page -->
     <link href="~/Content/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/Scripts/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="~/Content/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Content/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/Scripts/js/demo/datatables-demo.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -35,7 +52,7 @@
 
             <!-- Sidebar - Brand -->
             <li>
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/DanhSachLoaiXe/Index">
                     <div class="sidebar-brand-icon rotate-n-15">
                         <i class="fas fa-car-alt"></i>
                     </div>
@@ -48,41 +65,28 @@
 
                 <!-- Heading -->
                 <li class="sidebar-heading">
-                    Quản Lý Hợp Đồng
+                    Hợp Đồng
                     </>
 
-                    <!-- Nav Item - Pages Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                       aria-expanded="true" aria-controls="collapseTwo">
-                        <i class="fas fa-fw fa-file-contract"></i>
-                        <span>Hợp Đồng</span>
-                    </a>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Hợp Đồng:</h6>
-                            <a class="collapse-item" href="buttons.html">Danh Sách Hợp Đồng</a>
-                            <a class="collapse-item" href="cards.html">Thêm Mới Hợp Đồng</a>
-                        </div>
+                <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-file-contract"></i>
+                    <span>Quản Lý Hợp Đồng</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Hợp Đồng:</h6>
+                        <a class="collapse-item" href="login.html">Danh Sách Hợp Đồng</a>
+                        <a class="collapse-item" href="register.html">Thêm Mới Hợp Đồng</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Thanh Lý Hợp Đồng:</h6>
+                        <a class="collapse-item" href="404.html">DS TL Hợp Đồng</a>
+                        <a class="collapse-item" href="blank.html">Thêm Mới TL Hợp Đồng</a>
                     </div>
-                </li>
-
-                <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                       aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-fw fa-file-contract"></i>
-                        <span>Thanh Lý Hợp Đồng</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                         data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Thanh Lý Hợp Đồng:</h6>
-                            <a class="collapse-item" href="utilities-color.html">Danh Sách Thanh Lý Hợp Đồng</a>
-                            <a class="collapse-item" href="utilities-border.html">Thêm Mới Thanh Lý Hợp Đồng</a>
-                        </div>
-                    </div>
-                </li>
+                </div>
+            </li>
 
                 <!-- Divider -->
                 <<asp:Literal Mode="PassThrough" Text="<hr /> " class="sidebar-divider" runat="server">
@@ -94,16 +98,16 @@
 
                         <!-- Nav Item - Pages Collapse Menu -->
                     <li class="nav-item">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                           aria-expanded="true" aria-controls="collapseTwo">
-                            <i class="fas fa-fw fa-file-contract"></i>
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                           aria-expanded="true" aria-controls="collapseUtilities">
+                            <i class="fas fa-fw fa-cart-plus"></i>
                             <span>Quản Lý Đơn Đặt</span>
                         </a>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                             <div class="bg-white py-2 collapse-inner rounded">
                                 <h6 class="collapse-header">Đơn Đặt:</h6>
-                                <a class="collapse-item" href="buttons.html">Danh Sách Đơn Đặt</a>
-                                <a class="collapse-item" href="cards.html">Thêm Mới Đơn Đặt</a>
+                                <a class="collapse-item" href="/DanhSachDonDat/Index">Danh Sách Đơn Đặt</a>
+                                <a class="collapse-item" href="/DanhSachDonDat/Create">Thêm Mới Đơn Đặt</a>
                             </div>
                         </div>
                     </li>
@@ -123,15 +127,15 @@
                                 <i class="fas fa-fw fa-car"></i>
                                 <span>Quản Lý Xe</span>
                             </a>
-                            <div id="collapseLoaiXe" class="collapse" aria-labelledby="headingLoaiXe" data-parent="#accordionSidebar">
+                            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                                 <div class="bg-white py-2 collapse-inner rounded">
                                     <h6 class="collapse-header">Loại Xe:</h6>
-                                    <a class="collapse-item" asp-controller="DanhSachLoaiXe" asp-page="/Index">Danh Sách Loại Xe</a>
-                                    <a class="collapse-item" href="forgot-password.html">Thêm Mới Loại Xe</a>
+                                    <a class="collapse-item" asp-controller="DanhSachLoaiXe" asp-page="#" href="/DanhSachLoaiXe/Index">Danh Sách Loại Xe</a>
+                                    <a class="collapse-item" href="/DanhSachLoaiXe/Create">Thêm Mới Loại Xe</a>
                                     <div class="collapse-divider"></div>
                                     <h6 class="collapse-header">Xe:</h6>
-                                    <a class="collapse-item" href="404.html">Danh Sách Xe</a>
-                                    <a class="collapse-item" href="blank.html">Thêm Mới Xe</a>
+                                    <a class="collapse-item" href="/DanhSachXe/Index">Danh Sách Xe</a>
+                                    <a class="collapse-item" href="/DanhSachXe/Create">Thêm Mới Xe</a>
                                 </div>
                             </div>
                         </li>
@@ -193,24 +197,9 @@
             <!-- End of Main Content -->
 
             @RenderBody()
-            <!-- Bootstrap core JavaScript-->
-            <script src="~/Content/vendor/jquery/jquery.min.js"></script>
-            <script src="~/Content/vendor/bootstrap/~/Scripts/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Core plugin JavaScript-->
-            <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-            <!-- Custom scripts for all pages-->
-            <script src="~/Scripts/js/sb-admin-2.min.js"></script>
 
-            <!-- Page level plugins -->
-            <script src="~/Content/vendor/datatables/jquery.dataTables.min.js"></script>
-            <script src="~/Content/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-            <!-- Page level custom scripts -->
-            <script src="~/Scripts/js/demo/datatables-demo.js"></script>
-
-            @RenderSection("Scripts",required: false)
 
             <!-- Footer -->
 
@@ -236,6 +225,6 @@
 
 
 </body>
-
+@RenderSection("Scripts", required: false)
 </html>
 

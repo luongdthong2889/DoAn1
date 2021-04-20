@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DanhSachDonDatController.cs" />
     <Compile Include="Controllers\DanhSachLoaiXeController.cs" />
     <Compile Include="Controllers\DanhSachXeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2194,6 +2195,11 @@
     <Content Include="Views\DanhSachXe\Create.cshtml" />
     <Content Include="Views\DanhSachXe\Details.cshtml" />
     <Content Include="Views\DanhSachXe\Delete.cshtml" />
+    <Content Include="Views\DanhSachDonDat\Create.cshtml" />
+    <Content Include="Views\DanhSachDonDat\Edit.cshtml" />
+    <Content Include="Views\DanhSachDonDat\Delete.cshtml" />
+    <Content Include="Views\DanhSachDonDat\Details.cshtml" />
+    <Content Include="Views\DanhSachDonDat\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

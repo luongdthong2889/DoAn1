@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DemoDB2.Models.XE>
+﻿@model IEnumerable<DemoDB2.Models.CHITIETDONDAT>
 
 @{
     ViewBag.Title = "Index";
@@ -8,42 +8,43 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Danh sách xe</h1>
+    <h1 class="h3 mb-2 text-gray-800">Danh sách đơn đặt</h1>
     <p class="mb-4">
-        @Html.ActionLink("Tạo xe mới", "Create")
     </p>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Thông tin xe</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Thông tin đơn đặt</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Tên Xe</th>
-                            <th>Biển Số</th>
-                            <th>Giá</th>
-                            <th>Số Ngày Đặt</th>
+                            <th>Ngày Đặt</th>
                             <th>Tiền Cọc</th>
-                            <th>Tình Trạng</th>
-                            <th>Mô Tả</th>
-                            <th>Tên Loại Xe</th>
+                            <th>Tiền Trả</th>
+                            <th>Tên Khách</th>
+                            <th>Mô Tả CT</th>
+                            <th>Giá</th>
+                            <th>Số Lượng</th>
+                            <th>Mã Đặt Xe</th>
+                            <th>Tên Xe</th>
                             <th>Chức Năng</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Tên Xe</th>
-                            <th>Biển Số</th>
-                            <th>Giá</th>
-                            <th>Số Ngày Đặt</th>
+                            <th>Ngày Đặt</th>
                             <th>Tiền Cọc</th>
-                            <th>Tình Trạng</th>
-                            <th>Mô Tả</th>
-                            <th>Tên Loại Xe</th>
+                            <th>Tiền Trả</th>
+                            <th>Tên Khách</th>
+                            <th>Mô Tả CT</th>
+                            <th>Giá</th>
+                            <th>Số Lượng</th>
+                            <th>Mã Đặt Xe</th>
+                            <th>Tên Xe</th>
                             <th>Chức Năng</th>
                         </tr>
                     </tfoot>
@@ -52,33 +53,36 @@
                         {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.TENXE)
+                                @Html.DisplayFor(modelItem => item.DONDATXE.NGAYDAT)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.BIENSO)
+                                @Html.DisplayFor(modelItem => item.DONDATXE.TIENCOC)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.DONGIA)
+                                @Html.DisplayFor(modelItem => item.DONDATXE.TIENTRA)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.SONGAYDAT)
+                                @Html.DisplayFor(modelItem => item.DONDATXE.KHACHHANG.TENKHACH)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.TIENCOC)
+                                @Html.DisplayFor(modelItem => item.MOTACT)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.TINHTRANG)
+                                @Html.DisplayFor(modelItem => item.GIA)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.MOTA)
+                                @Html.DisplayFor(modelItem => item.SOLUONG)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.LOAIXE.TENLOAIXE)
+                                @Html.DisplayFor(modelItem => item.DONDATXE.MADATXE)
                             </td>
                             <td>
-                                @Html.ActionLink("Sửa", "Edit", new { id = item.MAXE }) |
-                                @Html.ActionLink("Chi tiết", "Details", new { id = item.MAXE }) |
-                                @Html.ActionLink("Xóa", "Delete", new { id = item.MAXE })
+                                @Html.DisplayFor(modelItem => item.XE.TENXE)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Sửa", "Edit", new { id = item.MACTDONDAT }) |
+                                @Html.ActionLink("Chi tiết", "Details", new { id = item.MACTDONDAT }) |
+                                @Html.ActionLink("Xóa", "Delete", new { id = item.MACTDONDAT })
                             </td>
                         </tr>
                         }
