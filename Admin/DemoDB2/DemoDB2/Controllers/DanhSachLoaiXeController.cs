@@ -33,31 +33,31 @@ namespace DemoDB2.Controllers
                 return Content("Error Create New");
             }
         }
-        public ActionResult Details(int mlx)
+        public ActionResult Details(int id)
         {
-            return View(db.LOAIXEs.Where(s => s.MALOAIXE == mlx).FirstOrDefault());
+            return View(db.LOAIXEs.Where(s => s.MALOAIXE == id).FirstOrDefault());
         }
-        public ActionResult Edit(int mlx)
+        public ActionResult Edit(int id)
         {
-            return View(db.LOAIXEs.Where(s => s.MALOAIXE == mlx).FirstOrDefault());
+            return View(db.LOAIXEs.Where(s => s.MALOAIXE == id).FirstOrDefault());
         }
         [HttpPost]
-        public ActionResult Edit(int mlx,LOAIXE lx)
+        public ActionResult Edit(int id,LOAIXE lx)
         {
             db.Entry(lx).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult Delete(int mlx)
+        public ActionResult Delete(int id)
         {
-            return View(db.LOAIXEs.Where(s => s.MALOAIXE == mlx).FirstOrDefault());
+            return View(db.LOAIXEs.Where(s => s.MALOAIXE == id).FirstOrDefault());
         }
         [HttpPost]
-        public ActionResult Delete(int mlx, LOAIXE lx)
+        public ActionResult Delete(int id, LOAIXE lx)
         {
             try
             {
-                lx = db.LOAIXEs.Where(s => s.MALOAIXE == mlx).FirstOrDefault();
+                lx = db.LOAIXEs.Where(s => s.MALOAIXE == id).FirstOrDefault();
                 db.LOAIXEs.Remove(lx);
                 db.SaveChanges();
                 return RedirectToAction("Index");

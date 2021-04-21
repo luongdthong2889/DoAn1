@@ -61,9 +61,9 @@
                                     <img src="@Url.Content(item.HINHANH)" alt="" height="50" width="50">
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Sửa", "Edit", new { mlx = item.MALOAIXE }) |
-                                    @Html.ActionLink("Chi tiết", "Details", new { mlx = item.MALOAIXE }) |
-                                    @Html.ActionLink("Xóa", "Delete", new { mlx = item.MALOAIXE })
+                                    @Html.ActionLink("Sửa", "Edit", new { id = item.MALOAIXE }) |
+                                    @Html.ActionLink("Chi tiết", "Details", new { id = item.MALOAIXE }) |
+                                    @Html.ActionLink("Xóa", "Delete", new { id = item.MALOAIXE })
                                 </td>
                             </tr>
                         }
