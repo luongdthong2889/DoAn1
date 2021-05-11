@@ -4,6 +4,7 @@
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <!-- Begin Page Content -->
@@ -11,13 +12,13 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Xóa đơn đặt</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Xóa đơn đặt</h6>
             </div>
             <div class="card-body">
 
                 <h3>Bạn có chắc chắn muốn xóa không?</h3>
                 <div>
-                    <h4>Thông tin đơn đặt</h4>
+                    <h4>Thông tin đơn đặt</h4>
                     <hr />
                     <dl class="dl-horizontal">
                         <dt>
@@ -58,6 +59,14 @@
 
                         <dd>
                             @Html.DisplayFor(model => model.TIENTRA)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.MATRANGTHAI)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.MATRANGTHAI)
                         </dd>
 
                     </dl>

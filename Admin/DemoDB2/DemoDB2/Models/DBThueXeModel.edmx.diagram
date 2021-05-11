@@ -4,16 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fbe1d7a5f59046998d201316144d4092" Name="Diagram1">
+      <Diagram DiagramId="b38ca2cbfab5424792cc01a6cb4e496a" Name="Diagram1">
         <EntityTypeShape EntityType="DBThueXeModel.CHITIETDONDAT" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DBThueXeModel.CHITIETHOPDONG" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DBThueXeModel.CHITIETTHANHLYHOPDONG" Width="1.5" PointX="8.25" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBThueXeModel.DONDATXE" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBThueXeModel.DONDATXE" Width="1.5" PointX="3" PointY="17.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DBThueXeModel.HOPDONG" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DBThueXeModel.KHACHHANG" Width="1.5" PointX="1.5" PointY="12.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DBThueXeModel.LOAIXE" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="DBThueXeModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DBThueXeModel.THANHLYHOPDONG" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBThueXeModel.TRANGTHAI" Width="1.5" PointX="0.75" PointY="18.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DBThueXeModel.XE" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
         <AssociationConnector Association="DBThueXeModel.FK_CHITIETDONDAT_DONDATXE" ManuallyRouted="false" />
         <AssociationConnector Association="DBThueXeModel.FK_CHITIETDONDAT_XE" ManuallyRouted="false" />
@@ -22,6 +23,7 @@
         <AssociationConnector Association="DBThueXeModel.FK_CHITIETTHANHLYHOPDONG_THANHLYHOPDONG" ManuallyRouted="false" />
         <AssociationConnector Association="DBThueXeModel.FK_CHITIETTHANHLYHOPDONG_XE" ManuallyRouted="false" />
         <AssociationConnector Association="DBThueXeModel.FK_DONDATXE_KHACHHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="DBThueXeModel.FK_DONDATXE_TRANGTHAI" ManuallyRouted="false" />
         <AssociationConnector Association="DBThueXeModel.FK_HOPDONG_KHACHHANG" ManuallyRouted="false" />
         <AssociationConnector Association="DBThueXeModel.FK_THANHLYHOPDONG_HOPDONG" ManuallyRouted="false" />
         <AssociationConnector Association="DBThueXeModel.FK_XE_LOAIXE" ManuallyRouted="false" />

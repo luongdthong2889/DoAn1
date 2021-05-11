@@ -176,6 +176,9 @@
     <Compile Include="Models\THANHLYHOPDONG.cs">
       <DependentUpon>DBThueXeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TRANGTHAI.cs">
+      <DependentUpon>DBThueXeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\XE.cs">
       <DependentUpon>DBThueXeModel.tt</DependentUpon>
     </Compile>
@@ -2195,11 +2198,11 @@
     <Content Include="Views\DanhSachXe\Create.cshtml" />
     <Content Include="Views\DanhSachXe\Details.cshtml" />
     <Content Include="Views\DanhSachXe\Delete.cshtml" />
-    <Content Include="Views\DanhSachDonDat\Create.cshtml" />
-    <Content Include="Views\DanhSachDonDat\Edit.cshtml" />
-    <Content Include="Views\DanhSachDonDat\Delete.cshtml" />
-    <Content Include="Views\DanhSachDonDat\Details.cshtml" />
+    <Content Include="Views\DanhSachDonDat\SelectTrangThai.cshtml" />
     <Content Include="Views\DanhSachDonDat\Index.cshtml" />
+    <Content Include="Views\DanhSachDonDat\Delete.cshtml" />
+    <Content Include="Views\DanhSachDonDat\Edit.cshtml" />
+    <Content Include="Views\DanhSachDonDat\EditDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

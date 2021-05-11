@@ -12,25 +12,19 @@ namespace DemoDB2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class DONDATXE
+    public partial class TRANGTHAI
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DONDATXE()
+        public TRANGTHAI()
         {
-            this.CHITIETDONDATs = new HashSet<CHITIETDONDAT>();
+            this.DONDATXEs = new HashSet<DONDATXE>();
         }
     
-        public int MADATXE { get; set; }
-        public int MAKHACH { get; set; }
-        public Nullable<System.DateTime> NGAYDAT { get; set; }
-        public Nullable<int> TIENCOC { get; set; }
-        public Nullable<int> TIENTRA { get; set; }
         public int MATRANGTHAI { get; set; }
-        public Nullable<System.DateTime> NGAYTRA { get; set; }
+        public string TRANGTHAI1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CHITIETDONDAT> CHITIETDONDATs { get; set; }
-        public virtual KHACHHANG KHACHHANG { get; set; }
-        public virtual TRANGTHAI TRANGTHAI { get; set; }
+        public virtual ICollection<DONDATXE> DONDATXEs { get; set; }
+        public List<TRANGTHAI> ListTrangThai { get; set; }
     }
 }

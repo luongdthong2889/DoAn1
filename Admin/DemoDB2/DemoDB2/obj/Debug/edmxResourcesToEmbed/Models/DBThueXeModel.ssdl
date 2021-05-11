@@ -45,6 +45,8 @@
     <Property Name="NGAYDAT" Type="date" />
     <Property Name="TIENCOC" Type="int" />
     <Property Name="TIENTRA" Type="int" />
+    <Property Name="MATRANGTHAI" Type="int" Nullable="false" />
+    <Property Name="NGAYTRA" Type="date" />
   </EntityType>
   <EntityType Name="HOPDONG">
     <Key>
@@ -105,6 +107,13 @@
     <Property Name="TONGTHANHTOAN" Type="int" />
     <Property Name="SOTIENDANOP" Type="int" />
     <Property Name="GHICHU" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="TRANGTHAI">
+    <Key>
+      <PropertyRef Name="MATRANGTHAI" />
+    </Key>
+    <Property Name="MATRANGTHAI" Type="int" Nullable="false" />
+    <Property Name="TRANGTHAI" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="XE">
     <Key>
@@ -204,6 +213,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_DONDATXE_TRANGTHAI">
+    <End Role="TRANGTHAI" Type="Self.TRANGTHAI" Multiplicity="1" />
+    <End Role="DONDATXE" Type="Self.DONDATXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRANGTHAI">
+        <PropertyRef Name="MATRANGTHAI" />
+      </Principal>
+      <Dependent Role="DONDATXE">
+        <PropertyRef Name="MATRANGTHAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_HOPDONG_KHACHHANG">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
     <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="*" />
@@ -250,6 +271,7 @@
     <EntitySet Name="LOAIXE" EntityType="Self.LOAIXE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="THANHLYHOPDONG" EntityType="Self.THANHLYHOPDONG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRANGTHAI" EntityType="Self.TRANGTHAI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="XE" EntityType="Self.XE" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_CHITIETDONDAT_DONDATXE" Association="Self.FK_CHITIETDONDAT_DONDATXE">
       <End Role="DONDATXE" EntitySet="DONDATXE" />
@@ -277,6 +299,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_DONDATXE_KHACHHANG" Association="Self.FK_DONDATXE_KHACHHANG">
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="DONDATXE" EntitySet="DONDATXE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONDATXE_TRANGTHAI" Association="Self.FK_DONDATXE_TRANGTHAI">
+      <End Role="TRANGTHAI" EntitySet="TRANGTHAI" />
       <End Role="DONDATXE" EntitySet="DONDATXE" />
     </AssociationSet>
     <AssociationSet Name="FK_HOPDONG_KHACHHANG" Association="Self.FK_HOPDONG_KHACHHANG">

@@ -31,7 +31,8 @@
                             <th>Số Lượng</th>
                             <th>Mã Đặt Xe</th>
                             <th>Tên Xe</th>
-                            <th>Chức Năng</th>
+                            <th>Trạng Thái</th>
+                            <th>Chức Năng</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -45,46 +46,50 @@
                             <th>Số Lượng</th>
                             <th>Mã Đặt Xe</th>
                             <th>Tên Xe</th>
-                            <th>Chức Năng</th>
+                            <th>Trạng Thái</th>
+                            <th>Chức Năng</th>
                         </tr>
                     </tfoot>
                     <tbody>
                         @foreach (var item in Model)
                         {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DONDATXE.NGAYDAT)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DONDATXE.TIENCOC)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DONDATXE.TIENTRA)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DONDATXE.KHACHHANG.TENKHACH)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.MOTACT)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.GIA)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.SOLUONG)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DONDATXE.MADATXE)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.XE.TENXE)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Sửa", "Edit", new { id = item.MACTDONDAT }) |
-                                @Html.ActionLink("Chi tiết", "Details", new { id = item.MACTDONDAT }) |
-                                @Html.ActionLink("Xóa", "Delete", new { id = item.MACTDONDAT })
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DONDATXE.NGAYDAT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DONDATXE.TIENCOC)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DONDATXE.TIENTRA)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DONDATXE.KHACHHANG.TENKHACH)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MOTACT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GIA)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SOLUONG)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DONDATXE.MADATXE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.XE.TENXE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DONDATXE.TRANGTHAI.TRANGTHAI1)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Sửa", "Edit", new { id = item.MADATXE }) |
+                                    @Html.ActionLink("Sửa chi tiết", "EditDetail", new { id = item.MACTDONDAT }) |
+                                    @Html.ActionLink("Xóa", "Delete", new { id = item.MACTDONDAT })
+                                </td>
+                            </tr>
                         }
                     </tbody>
                 </table>

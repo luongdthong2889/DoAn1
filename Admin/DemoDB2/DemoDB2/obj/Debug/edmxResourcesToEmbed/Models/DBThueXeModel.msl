@@ -48,6 +48,8 @@
           <ScalarProperty Name="NGAYDAT" ColumnName="NGAYDAT" />
           <ScalarProperty Name="TIENCOC" ColumnName="TIENCOC" />
           <ScalarProperty Name="TIENTRA" ColumnName="TIENTRA" />
+          <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+          <ScalarProperty Name="NGAYTRA" ColumnName="NGAYTRA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -113,6 +115,14 @@
           <ScalarProperty Name="TONGTHANHTOAN" ColumnName="TONGTHANHTOAN" />
           <ScalarProperty Name="SOTIENDANOP" ColumnName="SOTIENDANOP" />
           <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANGTHAIs">
+      <EntityTypeMapping TypeName="DBThueXeModel.TRANGTHAI">
+        <MappingFragment StoreEntitySet="TRANGTHAI">
+          <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+          <ScalarProperty Name="TRANGTHAI1" ColumnName="TRANGTHAI" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

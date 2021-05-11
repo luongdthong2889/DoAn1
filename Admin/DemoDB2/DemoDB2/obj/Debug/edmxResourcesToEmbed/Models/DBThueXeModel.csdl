@@ -51,8 +51,11 @@
     <Property Name="NGAYDAT" Type="DateTime" Precision="0" />
     <Property Name="TIENCOC" Type="Int32" />
     <Property Name="TIENTRA" Type="Int32" />
+    <Property Name="MATRANGTHAI" Type="Int32" Nullable="false" />
+    <Property Name="NGAYTRA" Type="DateTime" Precision="0" />
     <NavigationProperty Name="CHITIETDONDATs" Relationship="Self.FK_CHITIETDONDAT_DONDATXE" FromRole="DONDATXE" ToRole="CHITIETDONDAT" />
     <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_DONDATXE_KHACHHANG" FromRole="DONDATXE" ToRole="KHACHHANG" />
+    <NavigationProperty Name="TRANGTHAI" Relationship="Self.FK_DONDATXE_TRANGTHAI" FromRole="DONDATXE" ToRole="TRANGTHAI" />
   </EntityType>
   <EntityType Name="HOPDONG">
     <Key>
@@ -122,6 +125,14 @@
     <Property Name="GHICHU" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="CHITIETTHANHLYHOPDONGs" Relationship="Self.FK_CHITIETTHANHLYHOPDONG_THANHLYHOPDONG" FromRole="THANHLYHOPDONG" ToRole="CHITIETTHANHLYHOPDONG" />
     <NavigationProperty Name="HOPDONG" Relationship="Self.FK_THANHLYHOPDONG_HOPDONG" FromRole="THANHLYHOPDONG" ToRole="HOPDONG" />
+  </EntityType>
+  <EntityType Name="TRANGTHAI">
+    <Key>
+      <PropertyRef Name="MATRANGTHAI" />
+    </Key>
+    <Property Name="MATRANGTHAI" Type="Int32" Nullable="false" />
+    <Property Name="TRANGTHAI1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DONDATXEs" Relationship="Self.FK_DONDATXE_TRANGTHAI" FromRole="TRANGTHAI" ToRole="DONDATXE" />
   </EntityType>
   <EntityType Name="XE">
     <Key>
@@ -224,6 +235,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_DONDATXE_TRANGTHAI">
+    <End Role="TRANGTHAI" Type="Self.TRANGTHAI" Multiplicity="1" />
+    <End Role="DONDATXE" Type="Self.DONDATXE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRANGTHAI">
+        <PropertyRef Name="MATRANGTHAI" />
+      </Principal>
+      <Dependent Role="DONDATXE">
+        <PropertyRef Name="MATRANGTHAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_HOPDONG_KHACHHANG">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
     <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="*" />
@@ -270,6 +293,7 @@
     <EntitySet Name="LOAIXEs" EntityType="Self.LOAIXE" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="THANHLYHOPDONGs" EntityType="Self.THANHLYHOPDONG" />
+    <EntitySet Name="TRANGTHAIs" EntityType="Self.TRANGTHAI" />
     <EntitySet Name="XEs" EntityType="Self.XE" />
     <AssociationSet Name="FK_CHITIETDONDAT_DONDATXE" Association="Self.FK_CHITIETDONDAT_DONDATXE">
       <End Role="DONDATXE" EntitySet="DONDATXEs" />
@@ -297,6 +321,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_DONDATXE_KHACHHANG" Association="Self.FK_DONDATXE_KHACHHANG">
       <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="DONDATXE" EntitySet="DONDATXEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONDATXE_TRANGTHAI" Association="Self.FK_DONDATXE_TRANGTHAI">
+      <End Role="TRANGTHAI" EntitySet="TRANGTHAIs" />
       <End Role="DONDATXE" EntitySet="DONDATXEs" />
     </AssociationSet>
     <AssociationSet Name="FK_HOPDONG_KHACHHANG" Association="Self.FK_HOPDONG_KHACHHANG">

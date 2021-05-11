@@ -34,6 +34,7 @@ namespace DemoDB2.Models
         public virtual DbSet<LOAIXE> LOAIXEs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THANHLYHOPDONG> THANHLYHOPDONGs { get; set; }
+        public virtual DbSet<TRANGTHAI> TRANGTHAIs { get; set; }
         public virtual DbSet<XE> XEs { get; set; }
     }
 }
