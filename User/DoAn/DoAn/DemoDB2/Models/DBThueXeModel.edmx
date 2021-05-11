@@ -1,0 +1,840 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBThueXeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CHITIETDONDAT">
+          <Key>
+            <PropertyRef Name="MACTDONDAT" />
+          </Key>
+          <Property Name="MACTDONDAT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MADATXE" Type="int" Nullable="false" />
+          <Property Name="MAXE" Type="int" Nullable="false" />
+          <Property Name="MOTACT" Type="nvarchar(max)" />
+          <Property Name="GIA" Type="int" />
+          <Property Name="SOLUONG" Type="int" />
+        </EntityType>
+        <EntityType Name="CHITIETHOPDONG">
+          <Key>
+            <PropertyRef Name="MACTHOPDONG" />
+          </Key>
+          <Property Name="MACTHOPDONG" Type="int" Nullable="false" />
+          <Property Name="MAHOPDONG" Type="int" Nullable="false" />
+          <Property Name="MALOAIXE" Type="int" />
+          <Property Name="SOLUONG" Type="int" />
+          <Property Name="GIA" Type="float" />
+          <Property Name="NGAYNHAN" Type="date" />
+          <Property Name="NGAYTRA" Type="date" />
+          <Property Name="GHICHU" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="CHITIETTHANHLYHOPDONG">
+          <Key>
+            <PropertyRef Name="MACTTLHOPDONG" />
+          </Key>
+          <Property Name="MACTTLHOPDONG" Type="int" Nullable="false" />
+          <Property Name="MATLHOPDONG" Type="int" Nullable="false" />
+          <Property Name="MAXE" Type="int" Nullable="false" />
+          <Property Name="NGAYNHANXE" Type="date" />
+          <Property Name="NGAYTRAXE" Type="date" />
+          <Property Name="GIA" Type="float" />
+          <Property Name="THANHTIEN" Type="int" />
+        </EntityType>
+        <EntityType Name="DONDATXE">
+          <Key>
+            <PropertyRef Name="MADATXE" />
+          </Key>
+          <Property Name="MADATXE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MAKHACH" Type="int" Nullable="false" />
+          <Property Name="NGAYDAT" Type="date" />
+          <Property Name="TIENCOC" Type="int" />
+          <Property Name="TIENTRA" Type="int" />
+          <Property Name="MATRANGTHAI" Type="int" Nullable="false" />
+          <Property Name="NGAYTRA" Type="date" />
+        </EntityType>
+        <EntityType Name="HOPDONG">
+          <Key>
+            <PropertyRef Name="MAHOPDONG" />
+          </Key>
+          <Property Name="MAHOPDONG" Type="int" Nullable="false" />
+          <Property Name="MAKHACHHANG" Type="int" Nullable="false" />
+          <Property Name="NGAY" Type="date" />
+          <Property Name="NOIDUNG" Type="nvarchar(max)" />
+          <Property Name="DK_CHUNG" Type="nchar" MaxLength="50" />
+          <Property Name="DK_CUTHE" Type="nchar" MaxLength="50" />
+          <Property Name="TIENTAMUNG" Type="int" />
+        </EntityType>
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="MAKHACHHANG" />
+          </Key>
+          <Property Name="MAKHACHHANG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENKHACH" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIACHI" Type="nvarchar(max)" />
+          <Property Name="CMND" Type="nvarchar" MaxLength="50" />
+          <Property Name="SODIENTHOAI" Type="nvarchar" MaxLength="50" />
+          <Property Name="SOTAIKHOAN" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGANHANG" Type="nvarchar" MaxLength="50" />
+          <Property Name="TENCOQUAN" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LOAIXE">
+          <Key>
+            <PropertyRef Name="MALOAIXE" />
+          </Key>
+          <Property Name="MALOAIXE" Type="int" Nullable="false" />
+          <Property Name="TENLOAIXE" Type="nchar" MaxLength="20" />
+          <Property Name="SOCHO" Type="int" />
+          <Property Name="SOLUONGXE" Type="int" />
+          <Property Name="HANGSANXUAT" Type="nchar" MaxLength="10" />
+          <Property Name="HINHANH" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="THANHLYHOPDONG">
+          <Key>
+            <PropertyRef Name="MATLHOPDONG" />
+          </Key>
+          <Property Name="MATLHOPDONG" Type="int" Nullable="false" />
+          <Property Name="MAHOPDONG" Type="int" Nullable="false" />
+          <Property Name="NGAY" Type="date" />
+          <Property Name="HTTT" Type="nchar" MaxLength="20" />
+          <Property Name="TONGSOXETHUE" Type="int" />
+          <Property Name="TRATRUOC" Type="int" />
+          <Property Name="TONGTHANHTOAN" Type="int" />
+          <Property Name="SOTIENDANOP" Type="int" />
+          <Property Name="GHICHU" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="TRANGTHAI">
+          <Key>
+            <PropertyRef Name="MATRANGTHAI" />
+          </Key>
+          <Property Name="MATRANGTHAI" Type="int" Nullable="false" />
+          <Property Name="TRANGTHAI" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="XE">
+          <Key>
+            <PropertyRef Name="MAXE" />
+          </Key>
+          <Property Name="MAXE" Type="int" Nullable="false" />
+          <Property Name="MALOAIXE" Type="int" Nullable="false" />
+          <Property Name="TENXE" Type="nchar" MaxLength="10" />
+          <Property Name="BIENSO" Type="nchar" MaxLength="10" />
+          <Property Name="DONGIA" Type="int" />
+          <Property Name="SONGAYDAT" Type="int" />
+          <Property Name="TIENCOC" Type="int" />
+          <Property Name="TINHTRANG" Type="nchar" MaxLength="10" />
+          <Property Name="MOTA" Type="nchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_CHITIETDONDAT_DONDATXE">
+          <End Role="DONDATXE" Type="Self.DONDATXE" Multiplicity="1" />
+          <End Role="CHITIETDONDAT" Type="Self.CHITIETDONDAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DONDATXE">
+              <PropertyRef Name="MADATXE" />
+            </Principal>
+            <Dependent Role="CHITIETDONDAT">
+              <PropertyRef Name="MADATXE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETDONDAT_XE">
+          <End Role="XE" Type="Self.XE" Multiplicity="1" />
+          <End Role="CHITIETDONDAT" Type="Self.CHITIETDONDAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XE">
+              <PropertyRef Name="MAXE" />
+            </Principal>
+            <Dependent Role="CHITIETDONDAT">
+              <PropertyRef Name="MAXE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETHOPDONG_HOPDONG">
+          <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="1" />
+          <End Role="CHITIETHOPDONG" Type="Self.CHITIETHOPDONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOPDONG">
+              <PropertyRef Name="MAHOPDONG" />
+            </Principal>
+            <Dependent Role="CHITIETHOPDONG">
+              <PropertyRef Name="MAHOPDONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETHOPDONG_LOAIXE">
+          <End Role="LOAIXE" Type="Self.LOAIXE" Multiplicity="0..1" />
+          <End Role="CHITIETHOPDONG" Type="Self.CHITIETHOPDONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIXE">
+              <PropertyRef Name="MALOAIXE" />
+            </Principal>
+            <Dependent Role="CHITIETHOPDONG">
+              <PropertyRef Name="MALOAIXE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETTHANHLYHOPDONG_THANHLYHOPDONG">
+          <End Role="THANHLYHOPDONG" Type="Self.THANHLYHOPDONG" Multiplicity="1" />
+          <End Role="CHITIETTHANHLYHOPDONG" Type="Self.CHITIETTHANHLYHOPDONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THANHLYHOPDONG">
+              <PropertyRef Name="MATLHOPDONG" />
+            </Principal>
+            <Dependent Role="CHITIETTHANHLYHOPDONG">
+              <PropertyRef Name="MATLHOPDONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETTHANHLYHOPDONG_XE">
+          <End Role="XE" Type="Self.XE" Multiplicity="1" />
+          <End Role="CHITIETTHANHLYHOPDONG" Type="Self.CHITIETTHANHLYHOPDONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XE">
+              <PropertyRef Name="MAXE" />
+            </Principal>
+            <Dependent Role="CHITIETTHANHLYHOPDONG">
+              <PropertyRef Name="MAXE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONDATXE_KHACHHANG">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+          <End Role="DONDATXE" Type="Self.DONDATXE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MAKHACHHANG" />
+            </Principal>
+            <Dependent Role="DONDATXE">
+              <PropertyRef Name="MAKHACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONDATXE_TRANGTHAI">
+          <End Role="TRANGTHAI" Type="Self.TRANGTHAI" Multiplicity="1" />
+          <End Role="DONDATXE" Type="Self.DONDATXE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAI">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="DONDATXE">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HOPDONG_KHACHHANG">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+          <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MAKHACHHANG" />
+            </Principal>
+            <Dependent Role="HOPDONG">
+              <PropertyRef Name="MAKHACHHANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_THANHLYHOPDONG_HOPDONG">
+          <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="1" />
+          <End Role="THANHLYHOPDONG" Type="Self.THANHLYHOPDONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOPDONG">
+              <PropertyRef Name="MAHOPDONG" />
+            </Principal>
+            <Dependent Role="THANHLYHOPDONG">
+              <PropertyRef Name="MAHOPDONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_XE_LOAIXE">
+          <End Role="LOAIXE" Type="Self.LOAIXE" Multiplicity="1" />
+          <End Role="XE" Type="Self.XE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIXE">
+              <PropertyRef Name="MALOAIXE" />
+            </Principal>
+            <Dependent Role="XE">
+              <PropertyRef Name="MALOAIXE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBThueXeModelStoreContainer">
+          <EntitySet Name="CHITIETDONDAT" EntityType="Self.CHITIETDONDAT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHITIETHOPDONG" EntityType="Self.CHITIETHOPDONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHITIETTHANHLYHOPDONG" EntityType="Self.CHITIETTHANHLYHOPDONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DONDATXE" EntityType="Self.DONDATXE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOPDONG" EntityType="Self.HOPDONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOAIXE" EntityType="Self.LOAIXE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THANHLYHOPDONG" EntityType="Self.THANHLYHOPDONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANGTHAI" EntityType="Self.TRANGTHAI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="XE" EntityType="Self.XE" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CHITIETDONDAT_DONDATXE" Association="Self.FK_CHITIETDONDAT_DONDATXE">
+            <End Role="DONDATXE" EntitySet="DONDATXE" />
+            <End Role="CHITIETDONDAT" EntitySet="CHITIETDONDAT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETDONDAT_XE" Association="Self.FK_CHITIETDONDAT_XE">
+            <End Role="XE" EntitySet="XE" />
+            <End Role="CHITIETDONDAT" EntitySet="CHITIETDONDAT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETHOPDONG_HOPDONG" Association="Self.FK_CHITIETHOPDONG_HOPDONG">
+            <End Role="HOPDONG" EntitySet="HOPDONG" />
+            <End Role="CHITIETHOPDONG" EntitySet="CHITIETHOPDONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETHOPDONG_LOAIXE" Association="Self.FK_CHITIETHOPDONG_LOAIXE">
+            <End Role="LOAIXE" EntitySet="LOAIXE" />
+            <End Role="CHITIETHOPDONG" EntitySet="CHITIETHOPDONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETTHANHLYHOPDONG_THANHLYHOPDONG" Association="Self.FK_CHITIETTHANHLYHOPDONG_THANHLYHOPDONG">
+            <End Role="THANHLYHOPDONG" EntitySet="THANHLYHOPDONG" />
+            <End Role="CHITIETTHANHLYHOPDONG" EntitySet="CHITIETTHANHLYHOPDONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETTHANHLYHOPDONG_XE" Association="Self.FK_CHITIETTHANHLYHOPDONG_XE">
+            <End Role="XE" EntitySet="XE" />
+            <End Role="CHITIETTHANHLYHOPDONG" EntitySet="CHITIETTHANHLYHOPDONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONDATXE_KHACHHANG" Association="Self.FK_DONDATXE_KHACHHANG">
+            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+            <End Role="DONDATXE" EntitySet="DONDATXE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONDATXE_TRANGTHAI" Association="Self.FK_DONDATXE_TRANGTHAI">
+            <End Role="TRANGTHAI" EntitySet="TRANGTHAI" />
+            <End Role="DONDATXE" EntitySet="DONDATXE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HOPDONG_KHACHHANG" Association="Self.FK_HOPDONG_KHACHHANG">
+            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+            <End Role="HOPDONG" EntitySet="HOPDONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_THANHLYHOPDONG_HOPDONG" Association="Self.FK_THANHLYHOPDONG_HOPDONG">
+            <End Role="HOPDONG" EntitySet="HOPDONG" />
+            <End Role="THANHLYHOPDONG" EntitySet="THANHLYHOPDONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_XE_LOAIXE" Association="Self.FK_XE_LOAIXE">
+            <End Role="LOAIXE" EntitySet="LOAIXE" />
+            <End Role="XE" EntitySet="XE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBThueXeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CHITIETDONDAT">
+          <Key>
+            <PropertyRef Name="MACTDONDAT" />
+          </Key>
+          <Property Name="MACTDONDAT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MADATXE" Type="Int32" Nullable="false" />
+          <Property Name="MAXE" Type="Int32" Nullable="false" />
+          <Property Name="MOTACT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GIA" Type="Int32" />
+          <Property Name="SOLUONG" Type="Int32" />
+          <NavigationProperty Name="DONDATXE" Relationship="Self.FK_CHITIETDONDAT_DONDATXE" FromRole="CHITIETDONDAT" ToRole="DONDATXE" />
+          <NavigationProperty Name="XE" Relationship="Self.FK_CHITIETDONDAT_XE" FromRole="CHITIETDONDAT" ToRole="XE" />
+        </EntityType>
+        <EntityType Name="CHITIETHOPDONG">
+          <Key>
+            <PropertyRef Name="MACTHOPDONG" />
+          </Key>
+          <Property Name="MACTHOPDONG" Type="Int32" Nullable="false" />
+          <Property Name="MAHOPDONG" Type="Int32" Nullable="false" />
+          <Property Name="MALOAIXE" Type="Int32" />
+          <Property Name="SOLUONG" Type="Int32" />
+          <Property Name="GIA" Type="Double" />
+          <Property Name="NGAYNHAN" Type="DateTime" Precision="0" />
+          <Property Name="NGAYTRA" Type="DateTime" Precision="0" />
+          <Property Name="GHICHU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HOPDONG" Relationship="Self.FK_CHITIETHOPDONG_HOPDONG" FromRole="CHITIETHOPDONG" ToRole="HOPDONG" />
+          <NavigationProperty Name="LOAIXE" Relationship="Self.FK_CHITIETHOPDONG_LOAIXE" FromRole="CHITIETHOPDONG" ToRole="LOAIXE" />
+        </EntityType>
+        <EntityType Name="CHITIETTHANHLYHOPDONG">
+          <Key>
+            <PropertyRef Name="MACTTLHOPDONG" />
+          </Key>
+          <Property Name="MACTTLHOPDONG" Type="Int32" Nullable="false" />
+          <Property Name="MATLHOPDONG" Type="Int32" Nullable="false" />
+          <Property Name="MAXE" Type="Int32" Nullable="false" />
+          <Property Name="NGAYNHANXE" Type="DateTime" Precision="0" />
+          <Property Name="NGAYTRAXE" Type="DateTime" Precision="0" />
+          <Property Name="GIA" Type="Double" />
+          <Property Name="THANHTIEN" Type="Int32" />
+          <NavigationProperty Name="THANHLYHOPDONG" Relationship="Self.FK_CHITIETTHANHLYHOPDONG_THANHLYHOPDONG" FromRole="CHITIETTHANHLYHOPDONG" ToRole="THANHLYHOPDONG" />
+          <NavigationProperty Name="XE" Relationship="Self.FK_CHITIETTHANHLYHOPDONG_XE" FromRole="CHITIETTHANHLYHOPDONG" ToRole="XE" />
+        </EntityType>
+        <EntityType Name="DONDATXE">
+          <Key>
+            <PropertyRef Name="MADATXE" />
+          </Key>
+          <Property Name="MADATXE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MAKHACH" Type="Int32" Nullable="false" />
+          <Property Name="NGAYDAT" Type="DateTime" Precision="0" />
+          <Property Name="TIENCOC" Type="Int32" />
+          <Property Name="TIENTRA" Type="Int32" />
+          <Property Name="MATRANGTHAI" Type="Int32" Nullable="false" />
+          <Property Name="NGAYTRA" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CHITIETDONDATs" Relationship="Self.FK_CHITIETDONDAT_DONDATXE" FromRole="DONDATXE" ToRole="CHITIETDONDAT" />
+          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_DONDATXE_KHACHHANG" FromRole="DONDATXE" ToRole="KHACHHANG" />
+          <NavigationProperty Name="TRANGTHAI" Relationship="Self.FK_DONDATXE_TRANGTHAI" FromRole="DONDATXE" ToRole="TRANGTHAI" />
+        </EntityType>
+        <EntityType Name="HOPDONG">
+          <Key>
+            <PropertyRef Name="MAHOPDONG" />
+          </Key>
+          <Property Name="MAHOPDONG" Type="Int32" Nullable="false" />
+          <Property Name="MAKHACHHANG" Type="Int32" Nullable="false" />
+          <Property Name="NGAY" Type="DateTime" Precision="0" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DK_CHUNG" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="DK_CUTHE" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="TIENTAMUNG" Type="Int32" />
+          <NavigationProperty Name="CHITIETHOPDONGs" Relationship="Self.FK_CHITIETHOPDONG_HOPDONG" FromRole="HOPDONG" ToRole="CHITIETHOPDONG" />
+          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_HOPDONG_KHACHHANG" FromRole="HOPDONG" ToRole="KHACHHANG" />
+          <NavigationProperty Name="THANHLYHOPDONGs" Relationship="Self.FK_THANHLYHOPDONG_HOPDONG" FromRole="HOPDONG" ToRole="THANHLYHOPDONG" />
+        </EntityType>
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="MAKHACHHANG" />
+          </Key>
+          <Property Name="MAKHACHHANG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENKHACH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CMND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SODIENTHOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SOTAIKHOAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGANHANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENCOQUAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DONDATXEs" Relationship="Self.FK_DONDATXE_KHACHHANG" FromRole="KHACHHANG" ToRole="DONDATXE" />
+          <NavigationProperty Name="HOPDONGs" Relationship="Self.FK_HOPDONG_KHACHHANG" FromRole="KHACHHANG" ToRole="HOPDONG" />
+        </EntityType>
+        <EntityType Name="LOAIXE">
+          <Key>
+            <PropertyRef Name="MALOAIXE" />
+          </Key>
+          <Property Name="MALOAIXE" Type="Int32" Nullable="false" />
+          <Property Name="TENLOAIXE" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="SOCHO" Type="Int32" />
+          <Property Name="SOLUONGXE" Type="Int32" />
+          <Property Name="HANGSANXUAT" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="HINHANH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CHITIETHOPDONGs" Relationship="Self.FK_CHITIETHOPDONG_LOAIXE" FromRole="LOAIXE" ToRole="CHITIETHOPDONG" />
+          <NavigationProperty Name="XEs" Relationship="Self.FK_XE_LOAIXE" FromRole="LOAIXE" ToRole="XE" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="THANHLYHOPDONG">
+          <Key>
+            <PropertyRef Name="MATLHOPDONG" />
+          </Key>
+          <Property Name="MATLHOPDONG" Type="Int32" Nullable="false" />
+          <Property Name="MAHOPDONG" Type="Int32" Nullable="false" />
+          <Property Name="NGAY" Type="DateTime" Precision="0" />
+          <Property Name="HTTT" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="TONGSOXETHUE" Type="Int32" />
+          <Property Name="TRATRUOC" Type="Int32" />
+          <Property Name="TONGTHANHTOAN" Type="Int32" />
+          <Property Name="SOTIENDANOP" Type="Int32" />
+          <Property Name="GHICHU" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CHITIETTHANHLYHOPDONGs" Relationship="Self.FK_CHITIETTHANHLYHOPDONG_THANHLYHOPDONG" FromRole="THANHLYHOPDONG" ToRole="CHITIETTHANHLYHOPDONG" />
+          <NavigationProperty Name="HOPDONG" Relationship="Self.FK_THANHLYHOPDONG_HOPDONG" FromRole="THANHLYHOPDONG" ToRole="HOPDONG" />
+        </EntityType>
+        <EntityType Name="TRANGTHAI">
+          <Key>
+            <PropertyRef Name="MATRANGTHAI" />
+          </Key>
+          <Property Name="MATRANGTHAI" Type="Int32" Nullable="false" />
+          <Property Name="TRANGTHAI1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DONDATXEs" Relationship="Self.FK_DONDATXE_TRANGTHAI" FromRole="TRANGTHAI" ToRole="DONDATXE" />
+        </EntityType>
+        <EntityType Name="XE">
+          <Key>
+            <PropertyRef Name="MAXE" />
+          </Key>
+          <Property Name="MAXE" Type="Int32" Nullable="false" />
+          <Property Name="MALOAIXE" Type="Int32" Nullable="false" />
+          <Property Name="TENXE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="BIENSO" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="DONGIA" Type="Int32" />
+          <Property Name="SONGAYDAT" Type="Int32" />
+          <Property Name="TIENCOC" Type="Int32" />
+          <Property Name="TINHTRANG" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="MOTA" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="CHITIETDONDATs" Relationship="Self.FK_CHITIETDONDAT_XE" FromRole="XE" ToRole="CHITIETDONDAT" />
+          <NavigationProperty Name="CHITIETTHANHLYHOPDONGs" Relationship="Self.FK_CHITIETTHANHLYHOPDONG_XE" FromRole="XE" ToRole="CHITIETTHANHLYHOPDONG" />
+          <NavigationProperty Name="LOAIXE" Relationship="Self.FK_XE_LOAIXE" FromRole="XE" ToRole="LOAIXE" />
+        </EntityType>
+        <Association Name="FK_CHITIETDONDAT_DONDATXE">
+          <End Role="DONDATXE" Type="Self.DONDATXE" Multiplicity="1" />
+          <End Role="CHITIETDONDAT" Type="Self.CHITIETDONDAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DONDATXE">
+              <PropertyRef Name="MADATXE" />
+            </Principal>
+            <Dependent Role="CHITIETDONDAT">
+              <PropertyRef Name="MADATXE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETDONDAT_XE">
+          <End Role="XE" Type="Self.XE" Multiplicity="1" />
+          <End Role="CHITIETDONDAT" Type="Self.CHITIETDONDAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XE">
+              <PropertyRef Name="MAXE" />
+            </Principal>
+            <Dependent Role="CHITIETDONDAT">
+              <PropertyRef Name="MAXE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETHOPDONG_HOPDONG">
+          <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="1" />
+          <End Role="CHITIETHOPDONG" Type="Self.CHITIETHOPDONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOPDONG">
+              <PropertyRef Name="MAHOPDONG" />
+            </Principal>
+            <Dependent Role="CHITIETHOPDONG">
+              <PropertyRef Name="MAHOPDONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETHOPDONG_LOAIXE">
+          <End Role="LOAIXE" Type="Self.LOAIXE" Multiplicity="0..1" />
+          <End Role="CHITIETHOPDONG" Type="Self.CHITIETHOPDONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIXE">
+              <PropertyRef Name="MALOAIXE" />
+            </Principal>
+            <Dependent Role="CHITIETHOPDONG">
+              <PropertyRef Name="MALOAIXE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETTHANHLYHOPDONG_THANHLYHOPDONG">
+          <End Role="THANHLYHOPDONG" Type="Self.THANHLYHOPDONG" Multiplicity="1" />
+          <End Role="CHITIETTHANHLYHOPDONG" Type="Self.CHITIETTHANHLYHOPDONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THANHLYHOPDONG">
+              <PropertyRef Name="MATLHOPDONG" />
+            </Principal>
+            <Dependent Role="CHITIETTHANHLYHOPDONG">
+              <PropertyRef Name="MATLHOPDONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHITIETTHANHLYHOPDONG_XE">
+          <End Role="XE" Type="Self.XE" Multiplicity="1" />
+          <End Role="CHITIETTHANHLYHOPDONG" Type="Self.CHITIETTHANHLYHOPDONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XE">
+              <PropertyRef Name="MAXE" />
+            </Principal>
+            <Dependent Role="CHITIETTHANHLYHOPDONG">
+              <PropertyRef Name="MAXE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONDATXE_KHACHHANG">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+          <End Role="DONDATXE" Type="Self.DONDATXE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MAKHACHHANG" />
+            </Principal>
+            <Dependent Role="DONDATXE">
+              <PropertyRef Name="MAKHACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONDATXE_TRANGTHAI">
+          <End Role="TRANGTHAI" Type="Self.TRANGTHAI" Multiplicity="1" />
+          <End Role="DONDATXE" Type="Self.DONDATXE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAI">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="DONDATXE">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HOPDONG_KHACHHANG">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+          <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MAKHACHHANG" />
+            </Principal>
+            <Dependent Role="HOPDONG">
+              <PropertyRef Name="MAKHACHHANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_THANHLYHOPDONG_HOPDONG">
+          <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="1" />
+          <End Role="THANHLYHOPDONG" Type="Self.THANHLYHOPDONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOPDONG">
+              <PropertyRef Name="MAHOPDONG" />
+            </Principal>
+            <Dependent Role="THANHLYHOPDONG">
+              <PropertyRef Name="MAHOPDONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_XE_LOAIXE">
+          <End Role="LOAIXE" Type="Self.LOAIXE" Multiplicity="1" />
+          <End Role="XE" Type="Self.XE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIXE">
+              <PropertyRef Name="MALOAIXE" />
+            </Principal>
+            <Dependent Role="XE">
+              <PropertyRef Name="MALOAIXE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBThueXeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CHITIETDONDATs" EntityType="Self.CHITIETDONDAT" />
+          <EntitySet Name="CHITIETHOPDONGs" EntityType="Self.CHITIETHOPDONG" />
+          <EntitySet Name="CHITIETTHANHLYHOPDONGs" EntityType="Self.CHITIETTHANHLYHOPDONG" />
+          <EntitySet Name="DONDATXEs" EntityType="Self.DONDATXE" />
+          <EntitySet Name="HOPDONGs" EntityType="Self.HOPDONG" />
+          <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+          <EntitySet Name="LOAIXEs" EntityType="Self.LOAIXE" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="THANHLYHOPDONGs" EntityType="Self.THANHLYHOPDONG" />
+          <EntitySet Name="TRANGTHAIs" EntityType="Self.TRANGTHAI" />
+          <EntitySet Name="XEs" EntityType="Self.XE" />
+          <AssociationSet Name="FK_CHITIETDONDAT_DONDATXE" Association="Self.FK_CHITIETDONDAT_DONDATXE">
+            <End Role="DONDATXE" EntitySet="DONDATXEs" />
+            <End Role="CHITIETDONDAT" EntitySet="CHITIETDONDATs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETDONDAT_XE" Association="Self.FK_CHITIETDONDAT_XE">
+            <End Role="XE" EntitySet="XEs" />
+            <End Role="CHITIETDONDAT" EntitySet="CHITIETDONDATs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETHOPDONG_HOPDONG" Association="Self.FK_CHITIETHOPDONG_HOPDONG">
+            <End Role="HOPDONG" EntitySet="HOPDONGs" />
+            <End Role="CHITIETHOPDONG" EntitySet="CHITIETHOPDONGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETHOPDONG_LOAIXE" Association="Self.FK_CHITIETHOPDONG_LOAIXE">
+            <End Role="LOAIXE" EntitySet="LOAIXEs" />
+            <End Role="CHITIETHOPDONG" EntitySet="CHITIETHOPDONGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETTHANHLYHOPDONG_THANHLYHOPDONG" Association="Self.FK_CHITIETTHANHLYHOPDONG_THANHLYHOPDONG">
+            <End Role="THANHLYHOPDONG" EntitySet="THANHLYHOPDONGs" />
+            <End Role="CHITIETTHANHLYHOPDONG" EntitySet="CHITIETTHANHLYHOPDONGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHITIETTHANHLYHOPDONG_XE" Association="Self.FK_CHITIETTHANHLYHOPDONG_XE">
+            <End Role="XE" EntitySet="XEs" />
+            <End Role="CHITIETTHANHLYHOPDONG" EntitySet="CHITIETTHANHLYHOPDONGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONDATXE_KHACHHANG" Association="Self.FK_DONDATXE_KHACHHANG">
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+            <End Role="DONDATXE" EntitySet="DONDATXEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONDATXE_TRANGTHAI" Association="Self.FK_DONDATXE_TRANGTHAI">
+            <End Role="TRANGTHAI" EntitySet="TRANGTHAIs" />
+            <End Role="DONDATXE" EntitySet="DONDATXEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HOPDONG_KHACHHANG" Association="Self.FK_HOPDONG_KHACHHANG">
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+            <End Role="HOPDONG" EntitySet="HOPDONGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_THANHLYHOPDONG_HOPDONG" Association="Self.FK_THANHLYHOPDONG_HOPDONG">
+            <End Role="HOPDONG" EntitySet="HOPDONGs" />
+            <End Role="THANHLYHOPDONG" EntitySet="THANHLYHOPDONGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_XE_LOAIXE" Association="Self.FK_XE_LOAIXE">
+            <End Role="LOAIXE" EntitySet="LOAIXEs" />
+            <End Role="XE" EntitySet="XEs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBThueXeModelStoreContainer" CdmEntityContainer="DBThueXeEntities">
+          <EntitySetMapping Name="CHITIETDONDATs">
+            <EntityTypeMapping TypeName="DBThueXeModel.CHITIETDONDAT">
+              <MappingFragment StoreEntitySet="CHITIETDONDAT">
+                <ScalarProperty Name="MACTDONDAT" ColumnName="MACTDONDAT" />
+                <ScalarProperty Name="MADATXE" ColumnName="MADATXE" />
+                <ScalarProperty Name="MAXE" ColumnName="MAXE" />
+                <ScalarProperty Name="MOTACT" ColumnName="MOTACT" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHITIETHOPDONGs">
+            <EntityTypeMapping TypeName="DBThueXeModel.CHITIETHOPDONG">
+              <MappingFragment StoreEntitySet="CHITIETHOPDONG">
+                <ScalarProperty Name="MACTHOPDONG" ColumnName="MACTHOPDONG" />
+                <ScalarProperty Name="MAHOPDONG" ColumnName="MAHOPDONG" />
+                <ScalarProperty Name="MALOAIXE" ColumnName="MALOAIXE" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
+                <ScalarProperty Name="NGAYNHAN" ColumnName="NGAYNHAN" />
+                <ScalarProperty Name="NGAYTRA" ColumnName="NGAYTRA" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHITIETTHANHLYHOPDONGs">
+            <EntityTypeMapping TypeName="DBThueXeModel.CHITIETTHANHLYHOPDONG">
+              <MappingFragment StoreEntitySet="CHITIETTHANHLYHOPDONG">
+                <ScalarProperty Name="MACTTLHOPDONG" ColumnName="MACTTLHOPDONG" />
+                <ScalarProperty Name="MATLHOPDONG" ColumnName="MATLHOPDONG" />
+                <ScalarProperty Name="MAXE" ColumnName="MAXE" />
+                <ScalarProperty Name="NGAYNHANXE" ColumnName="NGAYNHANXE" />
+                <ScalarProperty Name="NGAYTRAXE" ColumnName="NGAYTRAXE" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
+                <ScalarProperty Name="THANHTIEN" ColumnName="THANHTIEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DONDATXEs">
+            <EntityTypeMapping TypeName="DBThueXeModel.DONDATXE">
+              <MappingFragment StoreEntitySet="DONDATXE">
+                <ScalarProperty Name="MADATXE" ColumnName="MADATXE" />
+                <ScalarProperty Name="MAKHACH" ColumnName="MAKHACH" />
+                <ScalarProperty Name="NGAYDAT" ColumnName="NGAYDAT" />
+                <ScalarProperty Name="TIENCOC" ColumnName="TIENCOC" />
+                <ScalarProperty Name="TIENTRA" ColumnName="TIENTRA" />
+                <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+                <ScalarProperty Name="NGAYTRA" ColumnName="NGAYTRA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOPDONGs">
+            <EntityTypeMapping TypeName="DBThueXeModel.HOPDONG">
+              <MappingFragment StoreEntitySet="HOPDONG">
+                <ScalarProperty Name="MAHOPDONG" ColumnName="MAHOPDONG" />
+                <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
+                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+                <ScalarProperty Name="DK_CHUNG" ColumnName="DK_CHUNG" />
+                <ScalarProperty Name="DK_CUTHE" ColumnName="DK_CUTHE" />
+                <ScalarProperty Name="TIENTAMUNG" ColumnName="TIENTAMUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHACHHANGs">
+            <EntityTypeMapping TypeName="DBThueXeModel.KHACHHANG">
+              <MappingFragment StoreEntitySet="KHACHHANG">
+                <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
+                <ScalarProperty Name="TENKHACH" ColumnName="TENKHACH" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="CMND" ColumnName="CMND" />
+                <ScalarProperty Name="SODIENTHOAI" ColumnName="SODIENTHOAI" />
+                <ScalarProperty Name="SOTAIKHOAN" ColumnName="SOTAIKHOAN" />
+                <ScalarProperty Name="NGANHANG" ColumnName="NGANHANG" />
+                <ScalarProperty Name="TENCOQUAN" ColumnName="TENCOQUAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAIXEs">
+            <EntityTypeMapping TypeName="DBThueXeModel.LOAIXE">
+              <MappingFragment StoreEntitySet="LOAIXE">
+                <ScalarProperty Name="MALOAIXE" ColumnName="MALOAIXE" />
+                <ScalarProperty Name="TENLOAIXE" ColumnName="TENLOAIXE" />
+                <ScalarProperty Name="SOCHO" ColumnName="SOCHO" />
+                <ScalarProperty Name="SOLUONGXE" ColumnName="SOLUONGXE" />
+                <ScalarProperty Name="HANGSANXUAT" ColumnName="HANGSANXUAT" />
+                <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DBThueXeModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THANHLYHOPDONGs">
+            <EntityTypeMapping TypeName="DBThueXeModel.THANHLYHOPDONG">
+              <MappingFragment StoreEntitySet="THANHLYHOPDONG">
+                <ScalarProperty Name="MATLHOPDONG" ColumnName="MATLHOPDONG" />
+                <ScalarProperty Name="MAHOPDONG" ColumnName="MAHOPDONG" />
+                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+                <ScalarProperty Name="HTTT" ColumnName="HTTT" />
+                <ScalarProperty Name="TONGSOXETHUE" ColumnName="TONGSOXETHUE" />
+                <ScalarProperty Name="TRATRUOC" ColumnName="TRATRUOC" />
+                <ScalarProperty Name="TONGTHANHTOAN" ColumnName="TONGTHANHTOAN" />
+                <ScalarProperty Name="SOTIENDANOP" ColumnName="SOTIENDANOP" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANGTHAIs">
+            <EntityTypeMapping TypeName="DBThueXeModel.TRANGTHAI">
+              <MappingFragment StoreEntitySet="TRANGTHAI">
+                <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+                <ScalarProperty Name="TRANGTHAI1" ColumnName="TRANGTHAI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XEs">
+            <EntityTypeMapping TypeName="DBThueXeModel.XE">
+              <MappingFragment StoreEntitySet="XE">
+                <ScalarProperty Name="MAXE" ColumnName="MAXE" />
+                <ScalarProperty Name="MALOAIXE" ColumnName="MALOAIXE" />
+                <ScalarProperty Name="TENXE" ColumnName="TENXE" />
+                <ScalarProperty Name="BIENSO" ColumnName="BIENSO" />
+                <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+                <ScalarProperty Name="SONGAYDAT" ColumnName="SONGAYDAT" />
+                <ScalarProperty Name="TIENCOC" ColumnName="TIENCOC" />
+                <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,90 @@
+﻿@model IEnumerable<DemoDB2.Models.XE>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout00.cshtml";
+    // List tên hãng
+    List<SelectListItem> l1 = new List<SelectListItem>();
+    l1.Add(new SelectListItem() { Text = "Toyota" });
+    l1.Add(new SelectListItem() { Text = "Honda" });
+    l1.Add(new SelectListItem() { Text = "Mescedes" });
+
+
+}
+
+<br />
+<br />
+@using (Html.BeginForm("Index", "DanhMucXe", FormMethod.Get))
+{
+    <div class="searchbar" style="text-align:center">
+        <span>
+            @Html.TextBox("SearchString")
+            @Html.DropDownList("HANGXE", l1, "Hãng Xe")
+            <input type="submit" value="Tìm kiếm" />
+        </span>
+    </div>
+}
+<!-- CONTENT =============================-->
+<section class="item content">
+    <div class="container toparea">
+        <div class="underlined-title">
+            <div class="editContent">
+                <h1 class="text-center latestitems" style="margin-top:30px">DANH MỤC XE</h1>
+            </div>
+            <div class="wow-hr type_short">
+                <span class="wow-hr-h">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 moreBox">
+                    <div class="productbox">
+                        <div class="fadeshop">
+                            <div class="captionshop text-center" style="display: none;">
+                                <h3>Tên Xe: @Html.DisplayFor(itemmodel => item.TENXE)</h3>
+                                <p>
+                                    @Html.DisplayFor(itemmodel => item.TINHTRANG)
+                                </p>
+                                <p>
+                                    Số chỗ: @Html.DisplayFor(itemmodel => item.LOAIXE.SOCHO)
+                                </p>
+                                @Html.ActionLink("Xem Chi Tiết", "Detail", new { id = item.MAXE }, new { @class = "learn-more detailslearn" })
+                            </div>
+                            <span class="maxproduct"><img src="@Url.Content(item.LOAIXE.HINHANH)" alt=""></span>
+                        </div>
+                        <div class="product-details">
+                            <a href="#">
+                                <h1>@Html.DisplayFor(itemmodel => item.LOAIXE.HANGSANXUAT) - @Html.DisplayFor(itemmodel => item.LOAIXE.SOCHO) CHỖ</h1>
+                            </a>
+                            <h1><i style="color:#4b91c3;margin:10px" class="fa fa-shopping-cart"></i>@Html.ActionLink("Đặt Ngay", "DatHang", "GioHang", new { id = item.MAXE }, null)</h1>
+                            <span class="price">
+                                <span class="edd_price" style=" font-family:'Times New Roman';font-weight:bold; color: blue;">@Html.DisplayFor(itemmodel => item.DONGIA) / 1 Ngày</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+
+<!-- CALL TO ACTION =============================-->
+@*<section class="content-block" style="background-color:#00bba7;">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="item" data-scrollreveal="enter top over 0.4s after 0.1s">
+                    <h1 class="callactiontitle">
+                        Promote Items Area Give Discount to Buyers <span class="callactionbutton"><i class="fa fa-gift"></i> WOW24TH</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>*@

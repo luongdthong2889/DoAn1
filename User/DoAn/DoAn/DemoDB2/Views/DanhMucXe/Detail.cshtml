@@ -1,0 +1,84 @@
+﻿@model DemoDB2.Models.XE
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout00.cshtml";
+}
+
+<br />
+<br />
+<!-- CONTENT =============================-->
+<section class="item content">
+    <div class="container toparea">
+        <div class="underlined-title">
+            <div class="editContent">
+                <h1 class="text-center latestitems">@Html.DisplayFor(model => model.TENXE) - @Html.DisplayFor(model => model.LOAIXE.HANGSANXUAT)</h1>
+            </div>
+            <div class="wow-hr type_short">
+                <span class="wow-hr-h">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="productbox">
+                    <img src="@Url.Content(Model.LOAIXE.HINHANH)" alt="">
+                    <div class="clearfix">
+                    </div>
+                    <br />
+                    <div class="product-details text-left">
+                        <p>
+                            CHỌN XE KIA 7 CHỖ HỖ TRỢ BẢO VỆ GIA ĐÌNH BẠN TRONG MÙA COVID 19.
+                            @Html.DisplayFor(model => model.TENXE) là một lựa chọn hợp lý cho gia đình bạn,
+                            dòng xe dẫn đầu phân khúc Mini-van vì sự tiện lợi.
+                            Lựa Chọn miên man mà giá cả lại cực kì êm ái.  Nếu quý khách đang tìm cho mình một chiếc xe sử dụng cho gia đình thì @Html.DisplayFor(model => model.TENXE) sẽ là lựa chọn hàng đầu.
+                            Với thiết kế sang trọng, bắt mắt, nội thất ấn tượng, khoang chứa đồ cực kì rộng rãi
+                            @Html.DisplayFor(model => model.TENXE) là người bạn đồng hành cùng quý khách trên những chặng đường dài với những trải nghiệm thú vị
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <a href="@Url.Action("DatHang","GioHang",new { id = Model.MAXE}, null)" class="btn btn-buynow">Đặt</a>
+                <div class="properties-box">
+                    <ul class="unstyle text-warning">
+                        <li><b class="propertyname">Giá Thuê:</b> @Html.DisplayFor(model => model.DONGIA) / 1 Ngày</li>
+                        <li><b class="propertyname">Địa Điểm Nhận Xe:</b> 828 Sư Vạn Hạnh, Phường 13, Quận 10, TP. Hồ Chí Minh.</li>
+                        <li><b class="propertyname">Địa Điểm Trả Xe:</b> 828 Sư Vạn Hạnh, Phường 13, Quận 10, TP. Hồ Chí Minh.</li>
+                    </ul>
+                </div>
+                <div class="properties-box">
+                    <ul class="unstyle">
+                        <li><b class="propertyname">Số Ghế:</b> @Html.DisplayFor(model => model.LOAIXE.SOCHO)</li>
+                        <li><b class="propertyname">Tên Loại - Năm Sản Xuất:</b> @Html.DisplayFor(model => model.LOAIXE.TENLOAIXE)</li>
+                        <li><b class="propertyname">Màu Sắc:</b> @Html.DisplayFor(model => model.MOTA)</li>
+                        <li><b class="propertyname">Nhiên Liệu:</b> Xăng</li>
+                        <li><b class="propertyname">Dòng Xe:</b> @Html.DisplayFor(model => model.LOAIXE.HANGSANXUAT)</li>
+                        <li><b class="propertyname">Truyền động:</b> Số Tự Động</li>
+                        <li><b class="propertyname">Wifi:</b> Không</li>
+                        <li><b class="propertyname">Camera Sau:</b> Có</li>
+                        <li><b class="propertyname">Máy lạnh:</b> Có</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CALL TO ACTION =============================-->
+@*<section class="content-block" style="background-color:#00bba7;">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <div class="item" data-scrollreveal="enter top over 0.4s after 0.1s">
+                        <h1 class="callactiontitle">
+                            Promote Items Area Give Discount to Buyers <span class="callactionbutton"><i class="fa fa-gift"></i> WOW24TH</span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>*@
