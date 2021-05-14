@@ -217,6 +217,7 @@
     <Content Include="Content\css\footer.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\LineIcons.svg" />
     <Content Include="Content\images\b.jpg" />
     <Content Include="Content\images\Banner_lon_1.jpg" />
     <Content Include="Content\images\Banner_lon_2.jpg" />
@@ -293,6 +294,10 @@
     <Content Include="Models\DBThueXeModel.edmx.diagram">
       <DependentUpon>DBThueXeModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\fonts\LineIcons.eot" />
+    <Content Include="Content\fonts\LineIcons.ttf" />
+    <Content Include="Content\fonts\LineIcons.woff" />
+    <Content Include="Content\fonts\LineIcons.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

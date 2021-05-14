@@ -562,8 +562,8 @@ D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DemoDB2\bin\Microsoft.AI.DependencyC
 D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DemoDB2\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DemoDB2\bin\Microsoft.AI.WindowsServer.xml
 D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DemoDB2\bin\Microsoft.AI.Web.xml
-D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DemoDB2\obj\Debug\DemoDB2.csprojAssemblyReference.cache
 D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DemoDB2\obj\Debug\DemoDB2.csproj.CoreCompileInputs.cache
 D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DemoDB2\obj\Debug\DemoDB2.csproj.CopyComplete
 D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DemoDB2\obj\Debug\DemoDB2.dll
 D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DemoDB2\obj\Debug\DemoDB2.pdb
+D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DemoDB2\obj\Debug\DemoDB2.csprojAssemblyReference.cache
