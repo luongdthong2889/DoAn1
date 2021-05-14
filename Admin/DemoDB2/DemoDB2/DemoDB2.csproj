@@ -127,9 +127,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DanhSachDonDatController.cs" />
-    <Compile Include="Controllers\DanhSachLoaiXeController.cs" />
-    <Compile Include="Controllers\DanhSachXeController.cs" />
+    <Compile Include="Controllers\DonDatController.cs" />
+    <Compile Include="Controllers\LoaiXeController.cs" />
+    <Compile Include="Controllers\XeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2188,21 +2188,21 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\DanhSachLoaiXe\Index.cshtml" />
-    <Content Include="Views\DanhSachLoaiXe\Create.cshtml" />
-    <Content Include="Views\DanhSachLoaiXe\Details.cshtml" />
-    <Content Include="Views\DanhSachLoaiXe\Edit.cshtml" />
-    <Content Include="Views\DanhSachLoaiXe\Delete.cshtml" />
-    <Content Include="Views\DanhSachXe\Index.cshtml" />
-    <Content Include="Views\DanhSachXe\Edit.cshtml" />
-    <Content Include="Views\DanhSachXe\Create.cshtml" />
-    <Content Include="Views\DanhSachXe\Details.cshtml" />
-    <Content Include="Views\DanhSachXe\Delete.cshtml" />
-    <Content Include="Views\DanhSachDonDat\SelectTrangThai.cshtml" />
-    <Content Include="Views\DanhSachDonDat\Index.cshtml" />
-    <Content Include="Views\DanhSachDonDat\Delete.cshtml" />
-    <Content Include="Views\DanhSachDonDat\Edit.cshtml" />
-    <Content Include="Views\DanhSachDonDat\EditDetail.cshtml" />
+    <Content Include="Views\LoaiXe\Index.cshtml" />
+    <Content Include="Views\LoaiXe\Create.cshtml" />
+    <Content Include="Views\LoaiXe\Details.cshtml" />
+    <Content Include="Views\LoaiXe\Edit.cshtml" />
+    <Content Include="Views\LoaiXe\Delete.cshtml" />
+    <Content Include="Views\Xe\Index.cshtml" />
+    <Content Include="Views\Xe\Edit.cshtml" />
+    <Content Include="Views\Xe\Create.cshtml" />
+    <Content Include="Views\Xe\Details.cshtml" />
+    <Content Include="Views\Xe\Delete.cshtml" />
+    <Content Include="Views\DonDat\SelectTrangThai.cshtml" />
+    <Content Include="Views\DonDat\Index.cshtml" />
+    <Content Include="Views\DonDat\Delete.cshtml" />
+    <Content Include="Views\DonDat\Edit.cshtml" />
+    <Content Include="Views\DonDat\EditDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

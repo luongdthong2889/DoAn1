@@ -56,12 +56,12 @@
                     <dd>
                         @Html.DisplayFor(model => model.HINHANH)
                     </dd>
-
+                    <p>
+                        @Html.ActionLink("Sửa", "Edit", new { id = Model.MALOAIXE }) |
+                        @Html.ActionLink("Về Danh sách", "Index")
+                    </p>
                 </dl>
-                <p>
-                    @Html.ActionLink("Sửa", "Edit", new { id = Model.MALOAIXE }) |
-                    @Html.ActionLink("Về Danh sách", "Index")
-                </p>
+
                 @section Scripts {
                     <!-- Bootstrap core JavaScript-->
                     <script src="~/Content/vendor/jquery/jquery.min.js"></script>

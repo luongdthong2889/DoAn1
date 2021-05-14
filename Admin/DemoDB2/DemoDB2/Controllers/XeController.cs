@@ -7,24 +7,24 @@ using System.Web.Mvc;
 
 namespace DemoDB2.Controllers
 {
-    public class DanhSachLoaiXeController : Controller
+    public class XeController : Controller
     {
         DBThueXeEntities db = new DBThueXeEntities();
-        // GET: DanhSachLoaiXe
+        // GET: DanhSachXe
         //public ActionResult Index()
         //{
-        //    return View(db.LOAIXEs.ToList());
+        //    return View(db.XEs.ToList());
         //}
         public ActionResult Create()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Create(LOAIXE lx)
+        public ActionResult Create(XE x)
         {
             try
             {
-                db.LOAIXEs.Add(lx);
+                db.XEs.Add(x);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -35,30 +35,30 @@ namespace DemoDB2.Controllers
         }
         public ActionResult Details(int id)
         {
-            return View(db.LOAIXEs.Where(s => s.MALOAIXE == id).FirstOrDefault());
+            return View(db.XEs.Where(s => s.MAXE == id).FirstOrDefault());
         }
         public ActionResult Edit(int id)
         {
-            return View(db.LOAIXEs.Where(s => s.MALOAIXE == id).FirstOrDefault());
+            return View(db.XEs.Where(s => s.MAXE == id).FirstOrDefault());
         }
         [HttpPost]
-        public ActionResult Edit(int id,LOAIXE lx)
+        public ActionResult Edit(int id, XE x)
         {
-            db.Entry(lx).State = System.Data.Entity.EntityState.Modified;
+            db.Entry(x).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
         public ActionResult Delete(int id)
         {
-            return View(db.LOAIXEs.Where(s => s.MALOAIXE == id).FirstOrDefault());
+            return View(db.XEs.Where(s => s.MAXE == id).FirstOrDefault());
         }
         [HttpPost]
-        public ActionResult Delete(int id, LOAIXE lx)
+        public ActionResult Delete(int id, XE x)
         {
             try
             {
-                lx = db.LOAIXEs.Where(s => s.MALOAIXE == id).FirstOrDefault();
-                db.LOAIXEs.Remove(lx);
+                x = db.XEs.Where(s => s.MAXE == id).FirstOrDefault();
+                db.XEs.Remove(x);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -70,9 +70,9 @@ namespace DemoDB2.Controllers
         public ActionResult Index(string _name)
         {
             if (_name == null)
-                return View(db.LOAIXEs.ToList());
+                return View(db.XEs.ToList());
             else
-                return View(db.LOAIXEs.Where(s => s.TENLOAIXE.Contains(_name)).ToList());
+                return View(db.XEs.Where(s => s.TENXE.Contains(_name)).ToList());
         }
     }
 }

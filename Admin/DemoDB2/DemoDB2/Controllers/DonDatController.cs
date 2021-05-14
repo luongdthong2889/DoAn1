@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace DemoDB2.Controllers
 {
-    public class DanhSachDonDatController : Controller
+    public class DonDatController : Controller
     {
         DBThueXeEntities db = new DBThueXeEntities();
         // GET: DanhSachDonDat
