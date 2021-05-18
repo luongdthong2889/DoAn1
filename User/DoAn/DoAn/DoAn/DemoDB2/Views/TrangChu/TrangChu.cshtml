@@ -18,7 +18,7 @@
                     <div class="col-md-4">
                         <div class="productbox">
                             <div class="fadeshop">
-                                <div class="captionshop text-center" style="display: none;">
+                                @*<div class="captionshop text-center" style="display: none;">
                                     <h3>@Html.DisplayFor(modelitem => item.MALOAIXE)</h3>
                                     <p>
                                         This is a short excerpt to generally describe what the item is about.
@@ -26,12 +26,12 @@
                                     <p>
                                         <a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i>Xem Chi Tiết</a>
                                     </p>
-                                </div>
-                                <span class="maxproduct"><img src="@Url.Content(item.HINHANH)" height="250" width="350" alt=""></span>
+                                </div>*@
+                                <span class="maxproduct"><img src="@Url.Content(item.HINHANH)" height="170"  alt=""></span>
                             </div>
                             <div class="product-details">
-                                <a href="#">
-                                    <h1>FastSell Theme</h1>
+                                <a href="/DANHMUCXE/Index/">
+                                    <h1>@Html.DisplayFor(itemmodel => item.TENLOAIXE)</h1>
                                 </a>
                             </div>
                         </div>

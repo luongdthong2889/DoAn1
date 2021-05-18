@@ -9,82 +9,83 @@
 <br />
 <br />
 @using (Html.BeginForm("SearchOption", "DanhMucXe", FormMethod.Get))
-{   <div class="container">
-    <div class="row">
-        <div class="form-inline" style="padding:0 0 20px 300px;">
-            <text style="font-size:15px;">Từ</text>
-            <input type="number" name="min" class="form-control" />
-            <text style="font-size:15px;">Đến</text>
-            <input type="number" name="max" class="form-control"/>
-            <input type="submit" value="Search" class="btn" />
-        </div>
-        
+{<div class="container">
+        <div class="row">
+            <div class="form-inline" style="padding:0 0 20px 300px;">
+                <text style="font-size:15px;">Từ</text>
+                <input type="number" name="min" class="form-control" />
+                <text style="font-size:15px;">Đến</text>
+                <input type="number" name="max" class="form-control" />
+                <input type="submit" value="Search" class="btn" />
+            </div>
+
         </div>
     </div>
 
-        }
-        <!-- CONTENT =============================-->
-        <section class="item content">
-            <div class="container toparea">
-                <div class="underlined-title">
-                    <div class="editContent">
-                        <h1 class="text-center latestitems" style="margin-top:30px">DANH MỤC XE</h1>
-                    </div>
-                    <div class="wow-hr type_short">
-                        <span class="wow-hr-h">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="row">
-                    @foreach (var item in Model)
-                    {
-                        <div class="col-md-4 moreBox">
-                            <div class="productbox">
-                                <div class="fadeshop">
-                                    <div class="captionshop text-center" style="display: none;">
-                                        <h3>Tên Xe: @Html.DisplayFor(itemmodel => item.TENXE)</h3>
-                                        <p>
-                                            @Html.DisplayFor(itemmodel => item.TINHTRANG)
-                                        </p>
-                                        <p>
-                                            Số chỗ: @Html.DisplayFor(itemmodel => item.LOAIXE.SOCHO)
-                                        </p>
-                                        @Html.ActionLink("Xem Chi Tiết", "Detail", new { id = item.MAXE }, new { @class = "learn-more detailslearn" })
-                                    </div>
-                                    <span class="maxproduct"><img src="@Url.Content(item.LOAIXE.HINHANH)" alt=""></span>
-                                </div>
-                                <div class="product-details">
-                                    <a href="#">
-                                        <h1>@Html.DisplayFor(itemmodel => item.LOAIXE.HANGSANXUAT) - @Html.DisplayFor(itemmodel => item.LOAIXE.SOCHO) CHỖ</h1>
-                                    </a>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <h1><i style="color:#4b91c3;margin:10px" class="fa fa-shopping-cart"></i>@Html.ActionLink("Đặt Ngay", "DatHang", "GioHang", new { id = item.MAXE }, null)</h1>
-                                    <span class="price">
-                                        <span class="edd_price" style="font-size:20px; font-family:'Times New Roman';font-weight:bold; color: blue;">@Html.DisplayFor(itemmodel => item.DONGIA) / 1 Ngày</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                </div>
+}
+<!-- CONTENT =============================-->
+<section class="item content">
+    <div class="container toparea">
+        <div class="underlined-title">
+            <div class="editContent">
+                <h1 class="text-center latestitems" style="margin-top:30px">DANH MỤC XE</h1>
             </div>
-        </section>
-
-        <style>
-            .rating li {
-                display: inline-block;
-                color: #FFAB02;
+            <div class="wow-hr type_short">
+                <span class="wow-hr-h">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 moreBox">
+                    <div class="productbox">
+                        <div class="fadeshop">
+                            @*<div class="captionshop text-center" style="display: none;">
+                                <h3>Tên Xe: @Html.DisplayFor(itemmodel => item.TENXE)</h3>
+                                <p>
+                                    @Html.DisplayFor(itemmodel => item.TINHTRANG)
+                                </p>
+                                <p>
+                                    Số chỗ: @Html.DisplayFor(itemmodel => item.LOAIXE.SOCHO)
+                                </p>
+                                @Html.ActionLink("Xem Chi Tiết", "Detail", new { id = item.MAXE }, new { @class = "learn-more detailslearn" })
+                            </div>*@
+                            <span class="maxproduct"><img src="@Url.Content(item.LOAIXE.HINHANH)"height="170" alt=""></span>
+                        </div>
+                        <div class="product-details">
+                            <a href="#">
+                                <h1>@Html.DisplayFor(itemmodel => item.LOAIXE.HANGSANXUAT) - @Html.DisplayFor(itemmodel => item.LOAIXE.SOCHO) CHỖ</h1>
+                            </a>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                           <br /> @Html.ActionLink("Xem Chi Tiết", "Detail", new { id = item.MAXE }, new { @class = "learn-more detailslearn" })
+                            <h1><i style="color:#4b91c3;margin:10px" class="fa fa-shopping-cart"></i>@Html.ActionLink("Đặt Ngay", "DatHang", "GioHang", new { id = item.MAXE }, null)</h1>
+                            <span class="price">
+                                <span class="edd_price" style="font-size:20px; font-family:'Times New Roman';font-weight:bold; color: blue;">@Html.DisplayFor(itemmodel => item.DONGIA) / 1 Ngày</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
             }
+        </div>
+    </div>
+</section>
 
-            .checked {
-                color: orange;
-        </style>
-        <link href="~/Content/css/LineIcons.2.0.css" rel="stylesheet" />
+<style>
+    .rating li {
+        display: inline-block;
+        color: #FFAB02;
+    }
+
+    .checked {
+        color: orange;
+</style>
+<link href="~/Content/css/LineIcons.2.0.css" rel="stylesheet" />
 

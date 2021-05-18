@@ -13,7 +13,7 @@ namespace DemoDB2.Controllers
         // GET: TrangChu
         public ActionResult TrangChu()
         {
-            return View(db.LOAIXEs.ToList());
+            return View(db.LOAIXEs.Take(6).ToList());
         }
     }
 }

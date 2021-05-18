@@ -1,4 +1,7 @@
-﻿@model IEnumerable<DemoDB2.Models.XE>
+﻿@*@model IEnumerable<DemoDB2.Models.XE>*@
+@using DemoDB2.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<XE>
 
 @{
     ViewBag.Title = "Index";
@@ -7,13 +10,21 @@
     List<SelectListItem> l1 = new List<SelectListItem>();
     l1.Add(new SelectListItem() { Text = "Toyota" });
     l1.Add(new SelectListItem() { Text = "Honda" });
-    l1.Add(new SelectListItem() { Text = "Mescedes" });
+    l1.Add(new SelectListItem() { Text = "Mercedes" });
+    l1.Add(new SelectListItem() { Text = "Ford" });
+    l1.Add(new SelectListItem() { Text = "Kia" });
+    l1.Add(new SelectListItem() { Text = "Mazda" });
+    l1.Add(new SelectListItem() { Text = "Hyundai" });
+    l1.Add(new SelectListItem() { Text = "Mitsubishi" });
+    l1.Add(new SelectListItem() { Text = "VinFast" });
 
     // List màu xe
     List<SelectListItem> l2 = new List<SelectListItem>();
     l2.Add(new SelectListItem() { Text = "Màu Đen" });
     l2.Add(new SelectListItem() { Text = "Màu Trắng" });
     l2.Add(new SelectListItem() { Text = "Màu Đỏ" });
+    l2.Add(new SelectListItem() { Text = "Màu Xanh" });
+    l2.Add(new SelectListItem() { Text = "Màu Nâu" });
 }
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <br />
@@ -60,16 +71,16 @@
                     <div class="productbox">
                         <div class="fadeshop">
                             @*<div class="captionshop text-center">
-                                <h3>@Html.DisplayFor(itemmodel => item.TENXE)</h3>
-                                <p>
-                                    @Html.DisplayFor(itemmodel => item.TINHTRANG)
-                                </p>
-                                <p>
-                                    Số chỗ: @Html.DisplayFor(itemmodel => item.LOAIXE.SOCHO)
-                                </p>
-                                @Html.ActionLink("Xem Chi Tiết", "Detail", new { id = item.MAXE }, new { @class = "learn-more detailslearn" })
-                            </div>*@
-                            <span class="maxproduct"><img src="@Url.Content(item.LOAIXE.HINHANH)" height="250" width="350" alt=""></span>
+                                    <h3>@Html.DisplayFor(itemmodel => item.TENXE)</h3>
+                                    <p>
+                                        @Html.DisplayFor(itemmodel => item.TINHTRANG)
+                                    </p>
+                                    <p>
+                                        Số chỗ: @Html.DisplayFor(itemmodel => item.LOAIXE.SOCHO)
+                                    </p>
+                                    @Html.ActionLink("Xem Chi Tiết", "Detail", new { id = item.MAXE }, new { @class = "learn-more detailslearn" })
+                                </div>*@
+                            <span class="maxproduct"><img src="@Url.Content(item.LOAIXE.HINHANH)" height="170" alt=""></span>
                         </div>
                         <div class="product-details">
                             <a href="#">
@@ -80,7 +91,7 @@
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
-                            @Html.ActionLink("Xem Chi Tiết", "Detail", new { id = item.MAXE }, new { @class = "learn-more detailslearn" })
+                            <br />@Html.ActionLink("Xem Chi Tiết", "Detail", new { id = item.MAXE }, new { @class = "learn-more detailslearn" })
                             <h1><i style="color:#4b91c3;margin:10px" class="fa fa-shopping-cart"></i>@Html.ActionLink("Đặt Ngay", "DatHang", "GioHang", new { id = item.MAXE }, null)</h1>
                             <span class="price">
                                 <span class="edd_price" style="font-size:20px; font-family:'Times New Roman';font-weight:bold; color: blue;">@Html.DisplayFor(itemmodel => item.DONGIA) / 1 Ngày</span>
@@ -92,62 +103,73 @@
         </div>
     </div>
 </section>
-
-<style>
-    .rating li {
-        display: inline-block;
-        color: #FFAB02;
-    }
-
-    .checked {
-        color: orange;
-    }
-
-    .bntcss {
-        display: inline-block;
-        padding: 12px 36px 5px;
-        margin: 10px 0;
-        color: #fff;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 18px;
-        letter-spacing: 2px;
-        border-radius: 40px;
-        background: linear-gradient(90deg,#0162c8,#55e7fc);
-
-    }
-
-    .tim {
-        padding: 12px 36px;
-        margin: 10px 0;
-        color: #fff;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 8px;
-        letter-spacing: 2px;
-        border-radius: 0 20px 20px 0;
-        border: none;
-        background: linear-gradient(90deg,#0162c8,#55e7fc);
-    }
-
-    .formtim {
-        position: relative;
-        display: inline-block;
-        padding-left: 200px;
-    }
-</style>
-<link href="~/Content/css/LineIcons.2.0.css" rel="stylesheet" />
-<!-- CALL TO ACTION =============================-->
-@*<section class="content-block" style="background-color:#00bba7;">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-sm-10 col-sm-offset-1">
-                    <div class="item" data-scrollreveal="enter top over 0.4s after 0.1s">
-                        <h1 class="callactiontitle">
-                            Promote Items Area Give Discount to Buyers <span class="callactionbutton"><i class="fa fa-gift"></i> WOW24TH</span>
-                        </h1>
-                    </div>
-                </div>
+<div class="page_menu">
+           
+            <div class="MenuPage">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
             </div>
-        </div>
-    </section>*@
+    </div>
+            <style>
+                .rating li {
+                    display: inline-block;
+                    color: #FFAB02;
+                }
+
+                .checked {
+                    color: orange;
+                }
+
+                .bntcss {
+                   
+                    display: inline-block;
+           
+                    padding: 12px 36px 5px;
+                    margin: 10px 0 0 630px;
+                    color: #fff;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-size: 18px;
+                    letter-spacing: 2px;
+                    border-radius: 40px;
+                    background: linear-gradient(90deg,#0162c8,#55e7fc);
+                }
+
+                .tim {
+                    padding: 12px 36px;
+                    margin: 10px 0;
+                    color: #fff;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-size: 8px;
+                    letter-spacing: 2px;
+                    border-radius: 0 20px 20px 0;
+                    border: none;
+                    background: linear-gradient(90deg,#0162c8,#55e7fc);
+                }
+
+                .formtim {
+                    position: relative;
+                    display: inline-block;
+                    padding-left: 200px;
+                 
+                }
+                .page_menu{
+                    display:inline;
+                    text-align:center;
+                }
+            </style>
+            <link href="~/Content/css/LineIcons.2.0.css" rel="stylesheet" />
+            <!-- CALL TO ACTION =============================-->
+            @*<section class="content-block" style="background-color:#00bba7;">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-sm-10 col-sm-offset-1">
+                                <div class="item" data-scrollreveal="enter top over 0.4s after 0.1s">
+                                    <h1 class="callactiontitle">
+                                        Promote Items Area Give Discount to Buyers <span class="callactionbutton"><i class="fa fa-gift"></i> WOW24TH</span>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>*@

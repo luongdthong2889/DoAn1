@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DemoDB2.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace DemoDB2.Controllers
 {
@@ -13,22 +15,30 @@ namespace DemoDB2.Controllers
         // GET: DanhMucXe
         public ActionResult SearchOption(double min = double.MinValue, double max = double.MaxValue)
         {
-            return View(db.XEs.Include("LOAIXE").Where(p => (double)p.DONGIA >= min && (double)p.DONGIA <= max).ToList());
+            var listsear = db.XEs.Include("LOAIXE").Where(p => (double)p.DONGIA >= min && (double)p.DONGIA <= max).ToList();
+            return View(listsear);
         }
-        public ActionResult Index(string HANGXE, string searchstring, string MAUXE)
-        {   if (MAUXE == "Màu Trắng" || MAUXE == "Màu Đỏ"|| MAUXE =="Màu Đen")
+        public ActionResult Index(string HANGXE, string searchstring, string MAUXE, int? page)
+        {
+            int pageSize = 9;
+            int pageNum = (page ?? 1);
+            if (MAUXE == "Màu Trắng" || MAUXE == "Màu Đỏ"|| MAUXE =="Màu Đen" || MAUXE == "Màu Xanh" || MAUXE == "Màu Nâu")
             {
-                return View(db.XEs.Include("LOAIXE").Where(p =>p.MOTA == MAUXE).ToList());
+                var lista = db.XEs.Include("LOAIXE").Where(p => p.MOTA == MAUXE).ToList();
+                return View(lista.ToPagedList(pageNum, pageSize));
             }
-            if (HANGXE == "Honda" || HANGXE == "Toyota" || HANGXE == "Mescedes")
+            if (HANGXE == "Honda" || HANGXE == "Toyota" || HANGXE == "Mercedes"|| HANGXE == "Ford"|| HANGXE == "Hyundai" || HANGXE == "Mitsubishi" || HANGXE == "VinFast" || HANGXE == "Kia" || HANGXE == "Mazda")
             {
-                return View(db.XEs.Include("LOAIXE").Where(s => s.LOAIXE.HANGSANXUAT == HANGXE).ToList());
+                var listb = db.XEs.Include("LOAIXE").Where(s => s.LOAIXE.HANGSANXUAT == HANGXE).ToList();
+                return View(listb.ToPagedList(pageNum, pageSize));
             }
             if (searchstring != null)
             {
-                return View(db.XEs.Include("LOAIXE").Where(s => s.TENXE.Contains(searchstring) || s.LOAIXE.HANGSANXUAT.Contains(searchstring) || s.LOAIXE.TENLOAIXE.Contains(searchstring)).ToList());
+                var listc = db.XEs.Include("LOAIXE").Where(s => s.TENXE.Contains(searchstring) || s.LOAIXE.HANGSANXUAT.Contains(searchstring) || s.LOAIXE.TENLOAIXE.Contains(searchstring)).ToList();
+                return View(listc.ToPagedList(pageNum, pageSize));
             }
-            return View(db.XEs.Include("LOAIXE").ToList());
+            var list = db.XEs.Include("LOAIXE").ToList();
+            return View(list.ToPagedList(pageNum, pageSize));
 
         }
 

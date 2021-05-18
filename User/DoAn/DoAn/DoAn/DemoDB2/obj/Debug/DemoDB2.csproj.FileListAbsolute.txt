@@ -662,3 +662,7 @@ D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DoAn\DemoDB2\obj\Debug\DemoDB2.cspro
 D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DoAn\DemoDB2\obj\Debug\DemoDB2.csproj.CopyComplete
 D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DoAn\DemoDB2\obj\Debug\DemoDB2.dll
 D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DoAn\DemoDB2\obj\Debug\DemoDB2.pdb
+D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DoAn\DemoDB2\bin\PagedList.dll
+D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DoAn\DemoDB2\bin\PagedList.Mvc.dll
+D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DoAn\DemoDB2\bin\PagedList.xml
+D:\HUFLIT HK 2 NAM 3\Do An 1\User\DoAn\DoAn\DoAn\DemoDB2\bin\PagedList.Mvc.xml

@@ -54,9 +54,11 @@
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.TRANGTHAI, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-2">
+                                Chọn trạng thái
+                            </div>
                             <div class="col-md-10">
-                                @{ Html.RenderAction("SelectTrangThai", "DanhSachDonDat");}
+                                @{ Html.RenderAction("SelectTrangThai", "DonDat");}
                             </div>
                         </div>
 
